@@ -1,0 +1,91 @@
+@font-face {
+  font-family: "FFFForward";
+
+  src: 
+    url("../../fonts/FFFFORWA.woff") format("woff"), 
+    url("../../fonts/FFFFORWA.woff2") format("woff2"); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+body { 
+  display: flex;
+  flex-direction: column;
+  font-family: 'FFFForward', Courier, monospace;
+  background-color: #191919;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+}
+
+.main-menu {
+  display: block;
+  width: 380px;
+  color: #01fe03;
+  font-size: 40px;
+  text-decoration: none;
+  text-align: center;
+  margin: 40px auto 60px auto;
+}
+
+.main-menu:hover {
+  outline: 2px solid #01fe03;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.startMenu, .restartMenu {
+  position: absolute;
+  background-color: #01fe03;
+  opacity: 0.9;
+  width: 840px;
+  height: 560px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 200px;
+  cursor: pointer;
+  transition: font-size, opacity .5s ease;
+}
+
+.restartMenu {
+  opacity: 1;
+  font-size: 80px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.score {
+  font-size: 50px;
+}
+
+.loser {
+  font-size: 90px;
+}
+
+.hide {
+  display: none;
+}
+
+.startMenu:hover {
+  font-size: 250px;
+  transition: all .5s ease;
+  opacity: 0.3;
+  background-image: url(img/thumb.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#myCanvas {
+  display: block;
+  outline: 2px solid #01fe03;
+}

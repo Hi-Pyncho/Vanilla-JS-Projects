@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> 
+  <script src="https://kit.fontawesome.com/e39c85467c.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Tap Music</title>
+</head>
+<body> 
+  <div class="dark hide">
+    <div class="text">You can use the 1, 2, 3, 4, 5, 6 keys on your keyboard to play music</div>
+  </div>
+  <a href="../../index.html" class="main-menu">MAIN MENU</a>
+  <div class="app">
+    <header>
+      <h1>Tap Music</h1>
+      <p>Make music with only one tap</p>
+    </header>
+    
+    <div class="playButton">
+      <i class="fas fa-play"></i>
+      <audio src="sounds/retroLoopOptimized.mp3" loop></audio>
+    </div>
+    <div class="pads">
+      <div data-descr='1' class="pad1">
+        <audio class="sound" src="sounds/N-Tom1.mp3"></audio>
+      </div>
+      <div data-descr='2' class="pad2">
+        <audio class="sound" src="sounds/SyhTom01.mp3"></audio>
+      </div>
+      <div data-descr='3' class="pad3">
+        <audio class="sound" src="sounds/Kick_28.mp3"></audio>
+      </div>
+      <div data-descr='4' class="pad4">
+        <audio class="sound" src="sounds/Clap2.mp3"></audio>
+      </div>
+      <div data-descr='5' class="pad5">
+        <audio class="sound" src="sounds/Hihat_open_2.mp3"></audio>
+      </div>
+      <div data-descr='6' class="pad6">
+        <audio class="sound" src="sounds/Snare3.mp3"></audio>
+      </div>
+    </div>
+  </div>
+  
+  <script src="index.js"></script>
+</body>
+</html>

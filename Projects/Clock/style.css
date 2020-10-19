@@ -1,0 +1,205 @@
+@font-face {
+  font-family: "FFFForward";
+
+  src: url("../../fonts/FFFFORWA.woff") format("woff"), /* Modern Browsers */
+    url("../../fonts/FFFFORWA.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'FFFForward', Courier, monospace;
+  background-color: #191919;
+}
+
+.main-menu {
+  display: block;
+  width: 380px;
+  color: #01fe03;
+  font-size: 40px;
+  text-decoration: none;
+  text-align: center;
+  margin: 30px auto 100px auto;
+}
+
+.main-menu:hover {
+  outline: 2px solid #01fe03;
+}
+
+.switchClocks {
+  display: flex;
+  color: #01fe03;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  width: 350px;
+  justify-content: space-between;
+}
+
+.current {
+  border: 2px solid #01fe03;
+  
+}
+
+.switchClocks span {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.switchClocks span:hover {
+  letter-spacing: 0.2em;
+}
+
+.clock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock h2 {
+  position: relative;
+  display: block;
+  color: #01fe03;
+  text-align: center;
+  margin: 40px 0 60px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  font-size: 1.8em;
+}
+
+.digitalClock {
+  display: flex;
+}
+
+.digitalClock div {
+  position: relative;
+  margin: 0 5px;
+}
+
+.digitalClock div span {
+  position: relative;
+  display: block;
+  width: 200px;
+  height: 160px;
+  background-color: #01fe03;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5em;
+  z-index: 10;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, .2);
+}
+
+.digitalClock div span:nth-child(2) {
+  height: 60px;
+  font-size: 1.4em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  z-index: 9;
+  box-shadow: none;
+}
+
+.digitalClock div:nth-last-child(1) span {
+  position: absolute;
+  bottom: 0;
+  width: 120px;
+  height: 80px;
+  font-size: 2.5em;
+  background-color: transparent;
+  border: 2px solid #01fe03;
+  color: #01fe03;
+}
+
+.analogClock {
+  width: 350px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(img/clock.svg);
+  background-size: cover;
+}
+
+.analogClock::before {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: #01fe03;
+  border-radius: 50%;
+  z-index: 200;
+}
+
+.analogClock .A-hours,
+.analogClock .A-minues,
+.analogClock .A-seconds {
+  position: absolute;
+}
+
+.A-hours, .hr {
+  width: 160px;
+  height: 160px;
+}
+
+.A-minutes, .mn {
+  width: 190px;
+  height: 190px;
+}
+
+.A-seconds, .sc {
+  width: 230px;
+  height: 230px;
+}
+
+.hr, .mn, .sc {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  position: absolute;
+}
+
+.hr::before {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 80px;
+  background-color: #01fe03;
+  z-index: 10;
+}
+
+.mn::before {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 90px;
+  background-color: #01fe03;
+  z-index: 10;
+}
+
+.sc::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 150px;
+  background-color: #01fe03;
+  z-index: 10;
+}
+
+
+.hide {
+  display: none;
+}

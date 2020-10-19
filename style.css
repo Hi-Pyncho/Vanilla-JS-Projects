@@ -1,0 +1,72 @@
+@font-face {
+  font-family: "FFFForward";
+  src: url("./fonts/FFFFORWA.woff") format("woff"), /* Modern Browsers */
+    url("./fonts/FFFFORWA.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  letter-spacing: 4px;
+}
+
+body {
+  font-family: 'FFFForward', Courier, monospace;
+  background-color: #191919;
+}
+
+.main-menu {
+  color: #01fe03;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 600px;
+  margin: 40px auto;
+}
+
+.project .title {
+  text-decoration: none;
+  color: #191919;
+  text-align: center;
+  pointer-events: none;
+}
+
+section {
+  display: flex;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 600px;
+  margin: 20px auto;
+}
+
+main > section {
+  width: 280px;
+  height: 280px;
+  background-color: #01fe03;
+  margin-bottom: 30px;
+}
+
+.project {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.thumb {
+  position: absolute;
+  top: 0;
+  transform: translateY(300px);
+  transition: transform 0.5s ease;
+}
+
+.project:hover .thumb {
+  transform: translateY(0);
+  transition: transform 0.5s ease;
+}

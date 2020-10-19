@@ -1,0 +1,265 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "FFFForward";
+
+  src: url("../../fonts/FFFFORWA.woff") format("woff"), /* Modern Browsers */
+    url("../../fonts/FFFFORWA.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'FFFForward', Courier, monospace;
+  background-color: #191919;
+}
+
+.main-menu {
+  display: block;
+  width: 380px;
+  color: #01fe03;
+  font-size: 40px;
+  text-decoration: none;
+  text-align: center;
+  margin: 30px auto 0 auto;
+}
+
+.main-menu:hover {
+  outline: 2px solid #01fe03;
+}
+
+.dark {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(32, 32, 32, 0.8);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  width: 800px;
+  text-align: center;
+  margin-top: 250px;
+  font-size: 25px;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.hide {
+  display: none;
+}
+
+.app {
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header {
+  margin-top: 50px;
+  color: #01fe03;
+}
+
+header h1 {
+  margin: 50px 0 30px 0;
+  font-weight: bold;
+  text-align: center;
+  font-size: 70px;
+}
+
+header p {
+  text-align: center;
+  font-size: 30px;
+}
+
+.pads {
+  width: 1200px;
+  display: flex;
+}
+
+.pads > div {
+  margin-top: auto;
+  position: relative;
+  background-color: #01fe03;
+  margin-right: 10px;
+  flex-grow: 1;
+  height: 150px;
+  width: 100px;
+  box-shadow: inset 0 0 0 black;
+  transition: box-shadow .1s ease;
+}
+
+.pads .clicked {
+  box-shadow: inset 0 15px 0 #191919;
+  transition: box-shadow .3s ease;
+}
+
+.playButton {
+  flex-shrink: 0;
+  width: 150px;
+  height: 150px;
+  background-color: #01fe03;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  opacity: 1;
+  margin: 30px 0 30px 0;
+}
+
+.hide {
+  opacity: 0;
+  transition: all .3s ease;
+  cursor: auto;
+}
+
+.playButton i {
+  text-align: center;
+  color: #191919;
+  font-size: 60px;
+  margin-bottom: 0;
+  margin-left: 14px;
+  padding: 20px;
+  transition: all .2s ease;
+}
+
+.playButton:hover i {
+  font-size: 80px;
+  margin-left: 18px;
+  transition: all .2s ease;
+}
+
+@keyframes jump {
+  0% {
+    bottom: 0%;
+    left: 20%;
+  }
+  50% {
+    bottom: 50%;
+    left: 50%;
+  }
+  100%{
+    bottom: 0%;
+    left: 75%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .pads {
+    width: 1000px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .pads {
+    width: 800px;
+    flex-wrap: wrap;
+  }
+
+  .pads > div {
+    height: 200px;
+    width: 200px;
+    margin: 10px;
+  }
+
+  header {
+    margin-top: 30px;
+  }
+
+}
+
+@media (max-width: 800px) {
+  .app {
+    height: 700px;
+  }
+
+  .pads {
+    width: 600px;
+  }
+
+  .pads > div {
+    height: 150px;
+    width: 150px;
+  }
+
+  header {
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 600px) {
+  .app {
+    height: 700px;
+  }
+
+  .pads {
+    width: 500px;
+  }
+
+  .pads > div {
+    height: 150px;
+    width: 130px;
+  }
+
+  header {
+    margin-top: 50px;
+  }
+
+  header h1 {
+    font-size: 50px;
+  }
+
+  header p {
+    font-size: 30px;
+  }
+
+  .playButton {
+    width: 110px;
+    height: 110px;
+  }
+
+  .playButton i {
+    font-size: 40px;
+  }
+
+  .playButton:hover i {
+    font-size: 60px;
+  }
+
+}
+
+@media (max-width: 500px) {
+  .app {
+    height: 600px;
+  }
+  
+  .pads {
+    width: 350px;
+  }
+  .pads > div {
+    height: 120px;
+    width: 100px;
+  }
+  
+  header {
+    margin-top: 30px;
+  }
+
+  header h1 {
+    font-size: 40px;
+  }
+
+  header p {
+    font-size: 20px;
+  }
+}

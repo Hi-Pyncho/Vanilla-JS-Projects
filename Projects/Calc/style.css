@@ -1,0 +1,108 @@
+@font-face {
+  font-family: "FFFForward";
+
+  src: url("../../fonts/FFFFORWA.woff") format("woff"), /* Modern Browsers */
+    url("../../fonts/FFFFORWA.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'FFFForward', Courier, monospace;
+  background-color: #191919;
+}
+
+button {
+  outline: none;
+  cursor: pointer;
+}
+
+.main-menu {
+  display: block;
+  width: 380px;
+  color: #01fe03;
+  font-size: 40px;
+  text-decoration: none;
+  text-align: center;
+  margin: 30px auto 0 auto;
+}
+
+.main-menu:hover {
+  outline: 2px solid #01fe03;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.calculator {
+  display: flex;
+  flex-wrap: wrap;
+  height: 520px;
+  width: 320px;
+  background-color: #01fe03;
+  margin: 0 auto;
+  align-self: flex-start;
+  margin-top: 40px;
+  border-radius: 3px;
+}
+
+.keyboard {
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.keyboard > button {
+  font-family: 'FFFForward', Courier, monospace;
+  background-color: #191919;
+  color: #01fe03;
+  border: none;
+  width: 60px;
+  height: 60px;
+  margin: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+.keyboard .plusOperator {
+  padding-bottom: 3px;
+}
+
+.keyboard .equalOperator {
+  padding-bottom: 4px;
+}
+
+.keyboard .empty {
+  background-color: #01fe03;
+}
+
+.keyboard .operator {
+  border-radius: 50%;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 120px;
+  width: 320px;
+  box-sizing: border-box;
+}
+
+.history {
+  height: 20px;
+  padding-right: 15px;
+  font-size: 20px; 
+}
+
+.output {
+  margin: 0 15px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
