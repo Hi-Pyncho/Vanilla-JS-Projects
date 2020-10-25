@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "FFFForward";
+
+  src: url("../../fonts/FFFFORWA.woff") format("woff"), /* Modern Browsers */
+    url("../../fonts/FFFFORWA.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'FFFForward', Courier, monospace;
+  background-color: #191919;
+  min-height: 100vh;
+}
+
+.main-menu {
+  display: block;
+  width: 380px;
+  color: #01fe03;
+  font-size: 40px;
+  text-decoration: none;
+  text-align: center;
+  margin: 30px auto 0 auto;
+}
+
+.main-menu:hover {
+  outline: 2px solid #01fe03;
+}
+
+header,
+form {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #01fe03;
+}
+
+form input, 
+form button {
+  padding: 0.5rem;
+  font-size: 2rem;
+}
+
+.input-wrapper {
+  display: flex;
+}
+
+.todo-input {
+  font-size: 1.32rem;
+  font-family: 'FFFForward', Courier, monospace;
+  background-color: #191919;
+  outline: none;
+  border: 2px solid #01fe03;
+  color: #01fe03;
+  overflow: hidden;
+}
+
+.todo-button {
+  background-color: #01fe03;
+  color: #191919;
+  outline: none;
+  border: 2px solid #01fe03;
+  cursor: pointer;
+  transition: background-color .3s ease, color .3s ease;
+}
+
+.todo-button:hover {
+  background-color: #191919;
+  color: #01fe03;
+  transition: all .3s ease;
+}
+
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-list {
+  min-width: 30%;
+  list-style: none;
+}
+
+.todo {
+  margin: 0.5rem;
+  background-color: #01fe03;
+  color: #191919;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all .5s ease;
+}
+
+.todo li {
+  flex: 1;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.delete-btn, .complete-btn {
+  background-color: #191919;
+  color: #01fe03;
+  padding: 1rem;
+  cursor: pointer;
+  border: 2px solid #01fe03;
+  font-size: 1rem;
+  outline: none;
+  transition: background-color .2s ease;
+}
+
+.complete-btn:hover,
+.delete-btn:hover {
+  background-color: #01fe03;
+  color: #191919;
+  border: 2px solid #191919;
+  transition: all .3s ease;
+}
+
+.fa-trash, 
+.fa-check {
+  pointer-events: none;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.4;
+}
+
+.fall {
+  opacity: 0;
+  transform-origin: right;
+  transform: scaleY(0);
+}
+
+select {
+  /* -webkit-appearance: none; */
+  /* -moz-appearance: none; */
+  /* appearance: none; */
+  outline: none;
+  box-shadow: none;
+  border: none;
+  background-color: #01fe03;
+  font-family: 'FFFForward', Courier, monospace;
+  padding: 7px;
+  font-size: 1.5rem;
+  width: 20rem;
+  cursor: pointer;
+}
+
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  color: #01fe03;
+  background-color: #191919;
+  padding: 15px 10px 10px 10px;
+  border: 2px solid #01fe03;
+  font-size: 3rem;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  /* width: 30px;
+  height: 30px; */
+  pointer-events: none;
+  line-height: 1px;
+  transition: background-color .3s ease;
+}
+
+.select:hover::after {
+  color: #191919;
+  background-color: #01fe03;
+  transition: all .3s ease;
+}
+
+option {
+  font-family: 'FFFForward', Courier, monospace;
+}
