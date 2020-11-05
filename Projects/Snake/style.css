@@ -34,13 +34,73 @@ body {
 }
 
 .wrapper {
+  position: relative;
+  flex-direction: column;
   margin-top: 50px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .canvas {
   border: 3px solid #01fe03;
   width: 600px;
   height: 600px;
+}
+
+.info {
+  width: 600px;
+  display: flex;
+  color:  #01fe03;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.score-num,
+.lives-num {
+  display: inline-block;
+  border: 2px solid #01fe03;
+  padding: 6px;
+}
+
+.startMenu, .restartMenu {
+  position: absolute;
+  bottom: 0;
+  background-color: #01fe03;
+  opacity: 0.9;
+  width: 600px;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 200px;
+  cursor: pointer;
+  transition: font-size, opacity .5s ease;
+}
+
+.restartMenu {
+  opacity: 1;
+  font-size: 80px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loser {
+  font-size: 90px;
+}
+
+.hide {
+  display: none;
+}
+
+.startMenu:hover {
+  font-size: 250px;
+  transition: all .5s ease;
+  opacity: 0.3;
+  /* background-image: url(img/thumb.png); */
+  background-repeat: no-repeat;
+  background-size: cover;
 }

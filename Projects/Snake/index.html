@@ -11,8 +11,21 @@
 <body>
   <a href="../../index.html" class="main-menu">MAIN MENU</a>
   <div class="wrapper">
+    <div class="startMenu">
+      <i class="fas fa-play"></i>
+    </div>
+    <div class="restartMenu hide">
+      <span class="loser">GAME OVER</span>
+      <span class="score"></span>
+    </div>
+    <div class="info">
+      <div class="score">SCORE <span class="score-num">-</span></div>
+      <div class="lives">LIVES <span class="lives-num">-</span></div>
+    </div>
     <canvas class="canvas" height="600" width="600"></canvas>
+    
   </div>
+  
   
   <script src="fruit.js"></script>
   <script src="snake.js"></script>
