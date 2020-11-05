@@ -212,7 +212,6 @@ startButton.addEventListener('click', function() {
 restartMenu.addEventListener('click', function() {
   restartMenu.style.display = 'none'
   document.location.reload()
-  
 })
 
 

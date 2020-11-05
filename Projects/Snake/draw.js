@@ -51,34 +51,6 @@ function setup() {
   }, 250)
 }
 
-// (function setup() {
-//   snake = new Snake()
-//   fruit = new Fruit()
-  
-//   fruit.pickLocation()
-
-//   window.setInterval(() => {
-//     ctx.clearRect(0, 0, canvas.width, canvas.height)
-//     fruit.draw()
-//     snake.update()
-//     snake.draw()
-
-//     if(snake.eat(fruit)){
-//       fruit.pickLocation()
-//     }
-
-//     snake.ckeckCollision()
-
-//     score.textContent = snake.total
-//     lives.textContent = snake.lives
-
-//     if(noMoreLives(snake.lives)) {
-//       snake.snakeDied()
-//     }
-
-//   }, 250)
-// }())
-
 window.addEventListener('keydown', evt => {
   if(['ArrowDown', 'ArrowUp'].indexOf(evt.key) > -1) {
     evt.preventDefault();
