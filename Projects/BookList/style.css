@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "FFFForward";
+
+  src: url("../../fonts/FFFFORWA.woff") format("woff"), 
+       url("../../fonts/FFFFORWA.woff2") format("woff2"); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'FFFForward', Courier, monospace;
+  background-color: #191919;
+  min-height: 100vh;
+}
+
+.main-menu {
+  display: block;
+  width: 380px;
+  color: #01fe03;
+  font-size: 40px;
+  text-decoration: none;
+  text-align: center;
+  margin: 30px auto 0 auto;
+}
+
+.main-menu:hover {
+  outline: 2px solid #01fe03;
+}
+
+.wrapper {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  color: #01fe03;
+  width: 600px;
+  margin: 50px auto 0 auto;
+}
+
+.title {
+  display: flex;
+  text-transform: uppercase;
+  align-items: center;
+}
+
+.title i {
+  font-size: 80px;
+  margin-right: 30px;
+}
+
+.title h1 {
+  font-size: 60px;
+  letter-spacing: 3px;
+}
+
+form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+form > input {
+  width: 100%;
+  background-color: #191919;
+  border: 2px solid #01fe03;
+  color: #01fe03;
+  font-family: 'FFFForward', Courier, monospace;
+  padding: 10px;
+}
+
+form > label {
+  margin-bottom: 10px;
+  margin-top: 20px;
+  letter-spacing: 2px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.button {
+  width: 100%;
+  margin-top: 20px;
+  font-family: 'FFFForward', Courier, monospace;
+  text-transform: uppercase;
+  background-color: #01fe03;
+  color: #191919;
+  border: none;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.button:hover {
+  text-decoration: underline 5px;
+}
+
+.books {
+  margin-top: 40px;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.books th {
+  background-color: #01fe03;
+  color: #191919;
+  text-align: start;
+  padding: 5px;
+  border-top: 2px solid #01fe03;
+  border-bottom: 2px solid #01fe03;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.empty {
+  width: 50px;
+}
+
+td {
+  font-size: 14px;
+  word-wrap:break-word;
+  padding: 10px 15px 10px 5px;
+}
+
+tbody td:nth-child(1),
+td:nth-child(2) {
+  border-right: 2px solid #01fe03;
+}
+
+tr {
+  border-bottom: 2px solid #01fe03;
+}
+
+.deleteBtn {
+  font-weight: bold;
+  border: 2px solid #01fe03;
+  background-color: #191919;
+  color: #01fe03;
+  padding: 4px 5px;
+  cursor: pointer;
+}
+
+.deleteBtn:hover {
+  background-color: #01fe03;
+  color: #191919;
+}
+
+.alert {
+  position: absolute;
+  top: 120px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0;
+  
+}
+
+.alert-danger {
+  animation: showAndHideDanger 1.5s linear;
+}
+
+.alert-success {
+  animation: showAndHideSuccess 1s linear;
+}
+
+@keyframes showAndHideSuccess {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes showAndHideDanger {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
