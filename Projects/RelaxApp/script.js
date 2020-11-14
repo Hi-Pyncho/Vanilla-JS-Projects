@@ -49,22 +49,22 @@ let percents = 0
 let currentPercent = totalTime
 let time = totalTime
 
-// let interval = setInterval(() => {
-//   const minutes = Math.floor(time / 60)
-//   let seconds = time % 60
+let interval = setInterval(() => {
+  const minutes = Math.floor(time / 60)
+  let seconds = time % 60
 
-//   seconds = seconds < 10 ? '0' + seconds : seconds 
+  seconds = seconds < 10 ? '0' + seconds : seconds 
 
-//   if(time < 0) {
-//     clearInterval(interval)
-//     alert('done!')
-//   } else {
-//     showProgress(time)
-//     timer.textContent = `${Math.trunc(minutes)}:${seconds}`
-//     time--
-//   }
+  if(time < 0) {
+    clearInterval(interval)
+    alert('done!')
+  } else {
+    showProgress(time)
+    timer.textContent = `${Math.trunc(minutes)}:${seconds}`
+    time--
+  }
   
-// }, 1000);
+}, 1000);
 
 function showProgress(time) {
   const onePercent = totalTime / 100
