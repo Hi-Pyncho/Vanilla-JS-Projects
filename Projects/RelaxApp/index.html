@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relax App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> 
+  <script src="https://kit.fontawesome.com/e39c85467c.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="../../index.html" class="main-menu">MAIN MENU</a>
+
+  
+
+  <div class="container">
+    <h1>Just Relax <br> 5 minutes</h1>
+
+    <!-- <div class="circle"></div> -->
+
+    <!-- <p id="text">Breathe In</p> -->
+
+    <!-- <div class="pointer-container">
+      <span class="pointer"></span>
+    </div> -->
+    <audio src="sounds/5minutes.mp3"></audio>
+    <div class="circle">
+      <div class="timer"></div>
+      <!-- <i class="fas fa-play icon"></i> -->
+      <svg
+        class="progress-ring"
+        width="480"
+        height="480">
+        <circle
+          class="progress-ring__circle"
+          stroke="#01fe03"
+          stroke-width="40"
+          fill="transparent"
+          r="200"
+          cx="240"
+          cy="240"/>
+      </svg>
+    </div>
+    
+
+  <!-- <input
+    value="35"
+    type="number"
+    step="5"
+    min="0"
+    max="100"
+    placeholder="progress"
+  > -->
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
