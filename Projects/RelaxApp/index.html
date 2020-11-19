@@ -11,22 +11,29 @@
 <body>
   <a href="../../index.html" class="main-menu">MAIN MENU</a>
 
-  
-
   <div class="container">
-    <h1>Just Relax <br> 5 minutes</h1>
+    <h1>just relax  <br> for 5 minutes</h1>
 
-    <!-- <div class="circle"></div> -->
-
-    <!-- <p id="text">Breathe In</p> -->
-
-    <!-- <div class="pointer-container">
-      <span class="pointer"></span>
-    </div> -->
     <audio src="sounds/5minutes.mp3"></audio>
+
     <div class="circle">
+      <div class="start">
+        <i class="fas fa-play"></i>
+      </div>
+
       <div class="timer"></div>
-      <!-- <i class="fas fa-play icon"></i> -->
+      
+      <div class="circle-border"></div>
+
+      <div class="end-timer-message">
+        <div class="question">are you relaxed enough?</div>
+        <div class="answers">
+          <button class="yes">Yes</button>
+          <button class="no">No</button>
+        </div>
+        <div class="success">You are calm now! <br/>Have a nice day!</div>
+      </div>
+
       <svg
         class="progress-ring"
         width="480"
@@ -42,15 +49,6 @@
       </svg>
     </div>
     
-
-  <!-- <input
-    value="35"
-    type="number"
-    step="5"
-    min="0"
-    max="100"
-    placeholder="progress"
-  > -->
   </div>
 
   <script src="script.js"></script>
