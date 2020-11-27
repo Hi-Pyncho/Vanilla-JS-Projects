@@ -18,6 +18,11 @@
   font-style: normal;
 }
 
+button {
+  outline: none;
+  cursor: pointer;
+}
+
 body {
   font-family: 'FFFForward', Courier, monospace;
   background-color: #191919;

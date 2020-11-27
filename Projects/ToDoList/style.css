@@ -1,37 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-@font-face {
-  font-family: "FFFForward";
-
-  src: url("../../fonts/FFFFORWA.woff") format("woff"), /* Modern Browsers */
-    url("../../fonts/FFFFORWA.woff2") format("woff2"); /* Modern Browsers */
-  font-weight: normal;
-  font-style: normal;
-}
-
-body {
-  font-family: 'FFFForward', Courier, monospace;
-  background-color: #191919;
-  min-height: 100vh;
-}
-
-.main-menu {
-  display: block;
-  width: 380px;
-  color: #01fe03;
-  font-size: 40px;
-  text-decoration: none;
-  text-align: center;
-  margin: 30px auto 0 auto;
-}
-
-.main-menu:hover {
-  outline: 2px solid #01fe03;
-}
+@import './../../basicStyle.css';
 
 header,
 form {
