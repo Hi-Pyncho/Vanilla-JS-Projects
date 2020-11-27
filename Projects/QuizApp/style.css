@@ -1,5 +1,12 @@
 @import './../../basicStyle.css';
 
+.title {
+  color: var(--light);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin: 30px auto 0 auto;
+}
+
 .container {
   position: relative;
   margin: 40px auto 0 auto;
