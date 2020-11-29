@@ -28,7 +28,8 @@
   display: none;
   margin-right: auto;
   margin-left: auto;
-  border: 3px solid var(--light);
+  border-top: 3px solid var(--light);
+  border-bottom: 3px solid var(--light);
   width: 100%;
   text-align: center;
   padding: 10px;
