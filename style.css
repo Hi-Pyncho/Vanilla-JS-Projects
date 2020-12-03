@@ -1,35 +1,21 @@
-@font-face {
-  font-family: "FFFForward";
-  src: url("./fonts/FFFFORWA.woff") format("woff"), /* Modern Browsers */
-    url("./fonts/FFFFORWA.woff2") format("woff2"); /* Modern Browsers */
-  font-weight: normal;
-  font-style: normal;
-}
+@import './basicStyle.css';
 
-* {
-  box-sizing: border-box;
-  letter-spacing: 4px;
-}
-
-body {
-  font-family: 'FFFForward', Courier, monospace;
-  background-color: #191919;
-}
-
-.main-menu {
-  color: #01fe03;
+.main-menu-title {
+  color: var(--light);
   display: flex;
   justify-content: center;
   box-sizing: border-box;
   width: 600px;
   margin: 40px auto;
-}
+  letter-spacing: 4px;
+} 
 
 .project .title {
   text-decoration: none;
-  color: #191919;
+  color: var(--dark);
   text-align: center;
   pointer-events: none;
+  letter-spacing: 4px;
 }
 
 section {
@@ -48,7 +34,7 @@ main {
 main > section {
   width: 280px;
   height: 280px;
-  background-color: #01fe03;
+  background-color: var(--light);
   margin-bottom: 30px;
 }
 

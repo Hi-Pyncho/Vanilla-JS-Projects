@@ -11,7 +11,7 @@
 
 .startMenu, .restartMenu {
   position: absolute;
-  background-color: #01fe03;
+  background-color: var(--light);
   opacity: 0.9;
   width: 840px;
   height: 560px;
@@ -56,5 +56,5 @@
 
 #myCanvas {
   display: block;
-  outline: 2px solid #01fe03;
+  outline: 2px solid var(--light);
 }

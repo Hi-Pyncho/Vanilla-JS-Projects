@@ -7,7 +7,7 @@
   align-items: center;
   margin-top: 50px;
   text-align: center;
-  color: #01fe03;
+  color: var(--light);
   text-transform: uppercase;
 }
 
@@ -19,26 +19,26 @@
 
 .password {
   font-size: 30px;
-  background-color: #01fe03;
+  background-color: var(--light);
   font-family: 'FFFForward', Courier, monospace;
   border: none;
   padding: 20px 80px 20px 10px;
-  color: #191919;
+  color: var(--dark);
   width: 600px;
   margin-bottom: 60px;
 }
 
 .password::selection {
-  background-color: #191919;
-  color: #01fe03;
+  background-color: var(--dark);
+  color: var(--light);
 }
 
 .button {
   font-family: 'FFFForward', Courier, monospace;
-  border: 2px solid #01fe03;
-  border-bottom: 18px solid #01fe03;
-  background-color: #191919;
-  color: #01fe03;
+  border: 2px solid var(--light);
+  border-bottom: 18px solid var(--light);
+  background-color: var(--dark);
+  color: var(--light);
   padding: 15px;
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -61,7 +61,7 @@
 
 .icon {
   position: absolute;
-  color: #191919;
+  color: var(--dark);
   font-size: 50px;
   right: 10px;
   top: 20px;
@@ -102,14 +102,14 @@
 @keyframes pressed {
   0% {
     transform: translateY(0);
-    border-bottom: 18px solid #01fe03;
+    border-bottom: 18px solid var(--light);
   }
   50% {
     transform: translateY(20px);
-    border-bottom: 2px solid #01fe03;
+    border-bottom: 2px solid var(--light);
   }
   100% {
     transform: translateY(0);
-    border-bottom: 18px solid #01fe03;
+    border-bottom: 18px solid var(--light);
   }
 }

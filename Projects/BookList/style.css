@@ -5,7 +5,7 @@
   position: relative;
   flex-direction: column;
   align-items: center;
-  color: #01fe03;
+  color: var(--light);
   width: 600px;
   margin: 50px auto 0 auto;
 }
@@ -36,9 +36,9 @@ form {
 
 form > input {
   width: 100%;
-  background-color: #191919;
-  border: 2px solid #01fe03;
-  color: #01fe03;
+  background-color: var(--dark);
+  border: 2px solid var(--light);
+  color: var(--light);
   font-family: 'FFFForward', Courier, monospace;
   padding: 10px;
 }
@@ -56,8 +56,8 @@ form > label {
   margin-top: 20px;
   font-family: 'FFFForward', Courier, monospace;
   text-transform: uppercase;
-  background-color: #01fe03;
-  color: #191919;
+  background-color: var(--light);
+  color: var(--dark);
   border: none;
   padding: 10px 20px;
   font-size: 20px;
@@ -76,12 +76,12 @@ form > label {
 }
 
 .books th {
-  background-color: #01fe03;
-  color: #191919;
+  background-color: var(--light);
+  color: var(--dark);
   text-align: start;
   padding: 5px;
-  border-top: 2px solid #01fe03;
-  border-bottom: 2px solid #01fe03;
+  border-top: 2px solid var(--light);
+  border-bottom: 2px solid var(--light);
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -98,25 +98,25 @@ td {
 
 tbody td:nth-child(1),
 td:nth-child(2) {
-  border-right: 2px solid #01fe03;
+  border-right: 2px solid var(--light);
 }
 
 tr {
-  border-bottom: 2px solid #01fe03;
+  border-bottom: 2px solid var(--light);
 }
 
 .deleteBtn {
   font-weight: bold;
-  border: 2px solid #01fe03;
-  background-color: #191919;
-  color: #01fe03;
+  border: 2px solid var(--light);
+  background-color: var(--dark);
+  color: var(--light);
   padding: 4px 5px;
   cursor: pointer;
 }
 
 .deleteBtn:hover {
-  background-color: #01fe03;
-  color: #191919;
+  background-color: var(--light);
+  color: var(--dark);
 }
 
 .alert {

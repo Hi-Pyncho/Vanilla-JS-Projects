@@ -10,7 +10,7 @@
 }
 
 .canvas {
-  border: 3px solid #01fe03;
+  border: 3px solid var(--light);
   width: 600px;
   height: 600px;
 }
@@ -18,7 +18,7 @@
 .info {
   width: 600px;
   display: flex;
-  color:  #01fe03;
+  color:  var(--light);
   justify-content: space-between;
   margin-bottom: 15px;
 }
@@ -26,14 +26,14 @@
 .score-num,
 .lives-num {
   display: inline-block;
-  border: 2px solid #01fe03;
+  border: 2px solid var(--light);
   padding: 6px;
 }
 
 .startMenu, .restartMenu {
   position: absolute;
   bottom: 0;
-  background-color: #01fe03;
+  background-color: var(--light);
   opacity: 0.9;
   width: 600px;
   height: 600px;

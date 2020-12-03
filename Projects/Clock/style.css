@@ -2,7 +2,7 @@
 
 .switchClocks {
   display: flex;
-  color: #01fe03;
+  color: var(--light);
   font-size: 1.5em;
   text-transform: uppercase;
   width: 350px;
@@ -11,7 +11,7 @@
 }
 
 .current {
-  border: 2px solid #01fe03;
+  border: 2px solid var(--light);
   
 }
 
@@ -34,7 +34,7 @@
 .clock h2 {
   position: relative;
   display: block;
-  color: #01fe03;
+  color: var(--light);
   text-align: center;
   margin: 40px 0 60px;
   font-weight: 700;
@@ -57,7 +57,7 @@
   display: block;
   width: 200px;
   height: 160px;
-  background-color: #01fe03;
+  background-color: var(--light);
   font-weight: 300;
   display: flex;
   justify-content: center;
@@ -84,8 +84,8 @@
   height: 80px;
   font-size: 2.5em;
   background-color: transparent;
-  border: 2px solid #01fe03;
-  color: #01fe03;
+  border: 2px solid var(--light);
+  color: var(--light);
 }
 
 .analogClock {
@@ -103,7 +103,7 @@
   position: absolute;
   width: 15px;
   height: 15px;
-  background-color: #01fe03;
+  background-color: var(--light);
   border-radius: 50%;
   z-index: 200;
 }
@@ -141,7 +141,7 @@
   position: absolute;
   width: 8px;
   height: 80px;
-  background-color: #01fe03;
+  background-color: var(--light);
   z-index: 10;
 }
 
@@ -150,7 +150,7 @@
   position: absolute;
   width: 4px;
   height: 90px;
-  background-color: #01fe03;
+  background-color: var(--light);
   z-index: 10;
 }
 
@@ -159,7 +159,7 @@
   position: absolute;
   width: 2px;
   height: 150px;
-  background-color: #01fe03;
+  background-color: var(--light);
   z-index: 10;
 }
 

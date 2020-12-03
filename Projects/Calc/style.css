@@ -11,7 +11,7 @@
   flex-wrap: wrap;
   height: 520px;
   width: 320px;
-  background-color: #01fe03;
+  background-color: var(--light);
   margin: 0 auto;
   align-self: flex-start;
   margin-top: 40px;
@@ -26,8 +26,8 @@
 
 .keyboard > button {
   font-family: 'FFFForward', Courier, monospace;
-  background-color: #191919;
-  color: #01fe03;
+  background-color: var(--dark);
+  color: var(--light);
   border: none;
   width: 60px;
   height: 60px;
@@ -46,7 +46,7 @@
 }
 
 .keyboard .empty {
-  background-color: #01fe03;
+  background-color: var(--light);
 }
 
 .keyboard .operator {
