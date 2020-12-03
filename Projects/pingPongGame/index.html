@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ping Pong Game</title>
+  <script src="https://kit.fontawesome.com/e39c85467c.js" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="#">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="../../index.html" class="main-menu">MAIN MENU</a>
+  <h1 class="title">PING PONG</h1>
+  
+  <div class="wrapper">
+
+    <div class="scoreTitle">Score</div>
+    <div class="computerScore"></div>
+    <div class="userScore"></div>
+
+    <div class="start"><i class="fas fa-play icon"></i></div>
+
+    <div class="gameEnd">
+      <div class="gameEnd-message">You Win!</div>
+      <button class="button-retry">Play Again</button>
+    </div>
+
+    <canvas id="pong" width="600" height="400"></canvas>
+    
+  </div>
+  
+  <script type="module" src="script.js"></script>
+</body>
+</html>

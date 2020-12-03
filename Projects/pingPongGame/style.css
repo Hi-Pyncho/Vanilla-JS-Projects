@@ -1,0 +1,117 @@
+@import './../../basicStyle.css';
+
+.wrapper {
+  position: relative;
+  margin: 30px auto 0 auto;
+  width: 600px;
+  height: 400px;
+}
+
+.title {
+  color: var(--light);
+  margin: 20px auto 40px auto;
+  letter-spacing: 4px;
+}
+
+.scoreTitle {
+  position: absolute;
+  color: var(--light);
+  top: -60px;
+  left: 247px;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+}
+
+#pong {
+  border: 3px solid var(--light); 
+  cursor: none;
+}
+
+.computerScore,
+.userScore {
+  position: absolute;
+  display: flex;
+  height: 20px;
+  top: -25px;
+}
+
+.computerScore {
+  left: 310px;
+}
+
+.userScore {
+  left: 195px;
+}
+
+.scoreItem {
+  position: relative;
+  width: 20px;
+  border: 2px solid var(--light);
+}
+
+.active::after {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: var(--light);
+}
+
+.gameEnd,
+.start {
+  position: absolute;
+  top: 3px;
+  right: -3px;
+  z-index: 100;
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: var(--light);
+  justify-content: center;
+  align-items: center;
+  color: var(--dark);
+  text-transform: uppercase;
+}
+
+.gameEnd-message {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.button-retry {
+  background-color: var(--dark);
+  border: none;
+  padding: 10px 15px;
+  font-family: 'FFFForward';
+  text-transform: uppercase;
+  color: var(--light);
+  letter-spacing: 3px;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+}
+
+.button-retry:hover {
+  background-color: var(--light);
+  border-color: var(--dark);
+  color: var(--dark);
+}
+
+.start {
+  display: flex;
+}
+
+.icon {
+  font-size: 100px;
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform, .2s ease;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+  transition: all .3s ease;
+}
+
