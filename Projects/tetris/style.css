@@ -41,3 +41,46 @@
 .score-value {
   margin-top: 10px;
 }
+
+.playButtons {
+  display: flex;
+  flex-wrap: wrap;
+  height: 36%;
+  /* align-content: flex-start; */
+}
+
+.btn {
+  background-color: var(--dark);
+  color: var(--light);
+  /* border: 2px solid var(--light); */
+  border: none;
+  font-size: 30px;
+}
+
+.left,
+.right {
+  width: 50%;
+}
+
+.up,
+.down {
+  width: 100%;
+}
+
+.up {
+  border-bottom: 2px solid var(--light);
+}
+
+.down {
+  border-top: 2px solid var(--light);;
+}
+
+.left {
+  border-right: 2px solid var(--light);
+}
+
+.btn:hover {
+  background-color: var(--light);
+  color: var(--dark);
+}
+
