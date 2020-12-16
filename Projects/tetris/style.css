@@ -1,0 +1,20 @@
+@import '../../../basicStyle.css';
+
+#tetris {
+  border: 2px solid var(--light);
+  margin: 0 auto 0 auto;
+}
+
+.title {
+  color: var(--light);
+  margin: 20px auto 30px auto;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.wrapper {
+  display: flex;
+  width: 320px;
+  margin: 0 auto 0 auto;
+}
+
