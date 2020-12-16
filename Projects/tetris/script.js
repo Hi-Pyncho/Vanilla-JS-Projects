@@ -1,9 +1,11 @@
 import * as tetro from './tetrominoes.js'
 
+const scoreValue = document.querySelector('.score-value')
 const canvas = document.querySelector('#tetris')
 const ctx = canvas.getContext('2d')
 
 const cvsNext = document.querySelector('#next')
+const ctxNext = cvsNext.getContext('2d')
 
 const green = '#01fe03'
 const black = '#191919'
@@ -14,6 +16,7 @@ const COLUMN = 10
 const VACANT = black // color of an empty square
 let score = 0
 
+let index = 0
 
 const PIECES = [tetro.Z, tetro.S, tetro.T, tetro.O, tetro.I, tetro.L, tetro.J]
 let board = []
@@ -22,10 +25,11 @@ class Piece {
   constructor(tetromino, color) {
     this.tetromino = tetromino
     this.tetrominoN = 0
+    this.index = 0
     this.activeTetromino = this.tetromino[this.tetrominoN]
     this.color = color
     this.x = 3
-    this.y = -2
+    this.y = -3
   }
 
   fill(color) {
@@ -62,14 +66,37 @@ class Piece {
     } 
   }
 
+  // update() {
+  //   if(this.collision(0, 1, this.activeTetromino)) {
+  //     console.log(1)
+  //   }
+  // }
+
   moveDown() {
+    if(piece.y === -3) {
+      // console.log('ddddd')
+      index++
+    }
     if(!this.collision(0, 1, this.activeTetromino)) {
       this.undraw()
       this.y++
       this.draw()
     } else {
       this.lock()
-      piece = randomPiece()
+
+      piecesArray.push(randomPiece())
+      
+      piece = piecesArray[index]
+      // console.log(this.index)
+      
+      clearNext()
+      drawNext(piecesArray[index + 1].activeTetromino)
+      
+      // index++
+      // console.log(piecesArray)
+      
+      // console.log(index)
+     
     }
     
   }
@@ -91,6 +118,7 @@ class Piece {
     }
   }
 
+  // Заменить проход двух циклов на одну общую функцию
   lock() {
     for(let r = 0; r < this.activeTetromino.length; r++) {
       for(let c = 0; c < this.activeTetromino.length; c++) {
@@ -101,7 +129,7 @@ class Piece {
           gameOver = true
           break
         }
-
+        
         board[this.y + r][this.x + c] = this.color
       }
     }
@@ -128,6 +156,7 @@ class Piece {
     drawBoard()
 
     //update score.textContent element
+    scoreValue.textContent = score
   }
 
   collision(x, y, piece) {
@@ -142,9 +171,14 @@ class Piece {
           return true
         }
 
-        if(newY < 0) continue
+        if(newY < 0) {
+          // console.log('ddddd')
+          
+          continue
+        }
 
         if(board[newY][newX] !== VACANT) {
+          
           return true
         }
       }
@@ -154,15 +188,31 @@ class Piece {
   }
 }
 
+let piecesArray = []
 
+for(let i = 0; i < 5; i++) {
+  piecesArray.push(randomPiece())
+}
 
 
 
 createBoard()
 drawBoard()
 
-let piece = randomPiece()
+let piece = piecesArray[0]
+// let nextPiece = randomPiece()
 
+// function drawNext() {
+//   for(let r = 0; r < piece.activeTetromino.length; r++) {
+//     for(let c = 0; c < piece.activeTetromino.length; c++) {
+//       if(piece.activeTetromino[r][c]) {
+//         // ctxNext.fillStyle = green
+//         // ctxNext.fillRect(SQ*c, SQ*r, SQ, SQ)
+//         drawSquare(SQ*c, SQ*r, green)
+//       }
+//     }
+//   }
+// }
 
 piece.draw()
 
@@ -175,13 +225,16 @@ function drop() {
 
   if(delta > 1000) {
     piece.moveDown()
+    // piece.update()
+    // if(piece.y < 0) console.log('tada!')
+    // console.log(piece.x)
+    
     dropStart = Date.now()
   }
   
   if(!gameOver) {
     requestAnimationFrame(drop)
   }
-  
 }
 
 drop()
@@ -238,3 +291,26 @@ function drawBoard() {
     }
   }
 }
+
+
+// for(let r = 0; r < PIECES[0])
+
+function clearNext() {
+  ctxNext.fillStyle = black
+  ctxNext.fillRect(0, 0, 110, 110)
+}
+
+function drawNext(piece) {
+  for(let r = 0; r < piece.length; r++) {
+    for(let c = 0; c < piece.length; c++) {
+      if(piece[r][c]) {
+        const shiftCoord = piece.length === 3 ? 2*SQ : SQ  
+        const shiftX = piece.length === 3 ? SQ + 10 : SQ 
+
+        ctxNext.fillStyle = green
+        ctxNext.fillRect(SQ*c + shiftX, SQ*r + shiftCoord, SQ, SQ )
+      }
+    }
+  }
+}
+
