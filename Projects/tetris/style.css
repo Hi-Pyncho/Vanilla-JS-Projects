@@ -46,13 +46,11 @@
   display: flex;
   flex-wrap: wrap;
   height: 36%;
-  /* align-content: flex-start; */
 }
 
 .btn {
   background-color: var(--dark);
   color: var(--light);
-  /* border: 2px solid var(--light); */
   border: none;
   font-size: 30px;
 }

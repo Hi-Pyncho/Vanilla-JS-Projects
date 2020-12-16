@@ -67,15 +67,8 @@ class Piece {
     } 
   }
 
-  // update() {
-  //   if(this.collision(0, 1, this.activeTetromino)) {
-  //     console.log(1)
-  //   }
-  // }
-
   moveDown() {
     if(piece.y === -3) {
-      // console.log('ddddd')
       index++
     }
     if(!this.collision(0, 1, this.activeTetromino)) {
@@ -86,18 +79,10 @@ class Piece {
       this.lock()
 
       piecesArray.push(randomPiece())
-      
       piece = piecesArray[index]
-      // console.log(this.index)
       
       clearNext()
       drawNext(piecesArray[index + 1].activeTetromino)
-      
-      // index++
-      // console.log(piecesArray)
-      
-      // console.log(index)
-     
     }
     
   }
@@ -119,7 +104,6 @@ class Piece {
     }
   }
 
-  // Заменить проход двух циклов на одну общую функцию
   lock() {
     for(let r = 0; r < this.activeTetromino.length; r++) {
       for(let c = 0; c < this.activeTetromino.length; c++) {
@@ -156,7 +140,6 @@ class Piece {
 
     drawBoard()
 
-    //update score.textContent element
     scoreValue.textContent = score
   }
 
@@ -172,14 +155,9 @@ class Piece {
           return true
         }
 
-        if(newY < 0) {
-          // console.log('ddddd')
-          
-          continue
-        }
-
+        if(newY < 0) continue
+      
         if(board[newY][newX] !== VACANT) {
-          
           return true
         }
       }
@@ -195,25 +173,10 @@ for(let i = 0; i < 5; i++) {
   piecesArray.push(randomPiece())
 }
 
-
-
 createBoard()
 drawBoard()
 
 let piece = piecesArray[0]
-// let nextPiece = randomPiece()
-
-// function drawNext() {
-//   for(let r = 0; r < piece.activeTetromino.length; r++) {
-//     for(let c = 0; c < piece.activeTetromino.length; c++) {
-//       if(piece.activeTetromino[r][c]) {
-//         // ctxNext.fillStyle = green
-//         // ctxNext.fillRect(SQ*c, SQ*r, SQ, SQ)
-//         drawSquare(SQ*c, SQ*r, green)
-//       }
-//     }
-//   }
-// }
 
 piece.draw()
 
@@ -226,10 +189,6 @@ function drop() {
 
   if(delta > 1000) {
     piece.moveDown()
-    // piece.update()
-    // if(piece.y < 0) console.log('tada!')
-    // console.log(piece.x)
-    
     dropStart = Date.now()
   }
   
@@ -248,13 +207,10 @@ document.addEventListener('keydown', (evt) => {
 })
 
 buttons.addEventListener('click', (evt) => {
-  console.log(evt.target.id)
   controlButtons(evt)
 })
 
 function control(evt) {
-  // to stop moving piece down, when key is pressed
-  // dropStart = Date.now()
   switch (evt.keyCode) {
     case 37: {
       piece.moveLeft()
@@ -313,16 +269,11 @@ function createBoard() {
 
 function drawBoard() {
   for(let r = 0; r < ROW; r++) {
-    // board[r] = []
     for(let c = 0; c < COLUMN; c++) {
-      // board[r][c] = VACANT
       drawSquare(c, r, board[r][c])
     }
   }
 }
-
-
-// for(let r = 0; r < PIECES[0])
 
 function clearNext() {
   ctxNext.fillStyle = black
