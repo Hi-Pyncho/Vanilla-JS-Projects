@@ -1,5 +1,6 @@
 import * as tetro from './tetrominoes.js'
 
+const buttons = document.querySelector('.playButtons')
 const scoreValue = document.querySelector('.score-value')
 const canvas = document.querySelector('#tetris')
 const ctx = canvas.getContext('2d')
@@ -243,21 +244,49 @@ document.addEventListener('keydown', (evt) => {
   if([32, 37, 38, 39, 40].indexOf(evt.keyCode) > -1) {
     evt.preventDefault()
   }
-
   control(evt)
+})
+
+buttons.addEventListener('click', (evt) => {
+  console.log(evt.target.id)
+  controlButtons(evt)
 })
 
 function control(evt) {
   // to stop moving piece down, when key is pressed
   // dropStart = Date.now()
   switch (evt.keyCode) {
-    case 37: piece.moveLeft() 
+    case 37: {
+      piece.moveLeft()
+      hoverAnimation(left)
+    }
     break
-    case 38: piece.rotate()
+    case 38: {
+      piece.rotate()
+      hoverAnimation(up)
+    }
     break
-    case 39: piece.moveRight()
+    case 39: {
+      piece.moveRight()
+      hoverAnimation(right)
+    }
     break
-    case 40: piece.moveDown()
+    case 40: {
+      piece.moveDown()
+      hoverAnimation(down)
+    }
+  }
+}
+
+function controlButtons(evt) {
+  switch (evt.target.id) {
+    case 'left': piece.moveLeft() 
+    break
+    case 'up': piece.rotate()
+    break
+    case 'right': piece.moveRight()
+    break
+    case 'down': piece.moveDown()
   }
 }
 
@@ -314,3 +343,10 @@ function drawNext(piece) {
   }
 }
 
+function hoverAnimation(direction) {
+  direction.style.animation = 'hover .2s linear'
+  let timeout = setTimeout(() => {
+    direction.style.animation = ''
+    clearTimeout(timeout)
+  }, 100);
+}

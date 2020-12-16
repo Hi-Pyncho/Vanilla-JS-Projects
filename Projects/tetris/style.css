@@ -84,3 +84,21 @@
   color: var(--dark);
 }
 
+@keyframes hover {
+  0% { 
+    background-color: var(--dark);
+    color: var(--light);
+  }
+  30% { 
+    background-color: var(--light);
+    color: var(--dark);
+  }
+  70% { 
+    background-color: var(--light);
+    color: var(--dark);
+  }
+  100% { 
+    background-color: var(--dark);
+    color: var(--light);
+  }
+}
