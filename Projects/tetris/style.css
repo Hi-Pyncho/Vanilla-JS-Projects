@@ -18,3 +18,11 @@
   margin: 0 auto 0 auto;
 }
 
+.sidePanel {
+  border: 2px solid var(--light);
+  width: 120px;
+}
+
+.nextPiece {
+  border-bottom: 2px solid var(--light);
+}
