@@ -2,12 +2,11 @@ import * as tetro from './tetrominoes.js'
 
 const buttons = document.querySelector('.playButtons')
 const scoreValue = document.querySelector('.score-value')
-const canvas = document.querySelector('#tetris')
-const ctx = canvas.getContext('2d')
-// const startButton = document.querySelector('.btn-startGame')
 const gameMenu = document.querySelector('.gameMenu')
 const gameEnd = document.querySelector('.gameEnd')
 
+const canvas = document.querySelector('#tetris')
+const ctx = canvas.getContext('2d')
 const cvsNext = document.querySelector('#next')
 const ctxNext = cvsNext.getContext('2d')
 
@@ -20,8 +19,6 @@ const COLUMN = 10
 const VACANT = black // color of an empty square
 let score = 0
 let gameOver = true
-
-
 let index = 0
 
 const PIECES = [tetro.Z, tetro.S, tetro.T, tetro.O, tetro.I, tetro.L, tetro.J]
@@ -82,12 +79,11 @@ class Piece {
       this.draw()
     } else {
       this.lock()
-
-      piecesArray.push(randomPiece())
-      piece = piecesArray[index]
-      
-      clearNext()
-      drawNext(piecesArray[index + 1].activeTetromino)
+      removeFullRows()
+      drawBoard()
+      setScoreValue()
+      createNextPieces()
+      this.drawNext(piecesArray[index + 1].activeTetromino)
     }
     
   }
@@ -96,6 +92,7 @@ class Piece {
     let nextPattern = this.tetromino[(this.tetrominoN + 1) % this.tetromino.length]
     let kick = 0
 
+    // move the piece to the left or to the right from the wall
     if(this.collision(0, 0, nextPattern)) {
       this.x > COLUMN / 2 ? kick = -1 : kick = 1 
     }
@@ -112,43 +109,17 @@ class Piece {
   lock() {
     for(let r = 0; r < this.activeTetromino.length; r++) {
       for(let c = 0; c < this.activeTetromino.length; c++) {
+        // skip the vacant squares
         if(!this.activeTetromino[r][c]) continue
-
+        // pieces to lock on top = game over
         if(this.y + r < 0) {
-          // alert('Game Over')
-          score_Value.textContent = score
-          gameEnd.style.display = 'flex'
-          gameOver = true
-          // resetGame()
+          gameIsOver()
           break
         }
-        
+         // lock the piece
         board[this.y + r][this.x + c] = this.color
       }
     }
-
-    for(let r = 0; r < ROW; r++) {
-      let isRowFull = true
-      for(let c = 0; c < COLUMN; c++) {
-        isRowFull = isRowFull && board[r][c] !== VACANT
-      }   
-    
-      if(isRowFull) {
-        for(let y = r; y > 1; y--) {
-          for(let c = 0; c < COLUMN; c++) {
-            board[y][c] = board[y-1][c]
-          }
-        }
-        for(let c = 0; c < COLUMN; c++) {
-          board[0][c] = VACANT
-        }
-        score += 10
-      }
-    }
-
-    drawBoard()
-
-    scoreValue.textContent = score
   }
 
   collision(x, y, piece) {
@@ -173,6 +144,27 @@ class Piece {
     
     return false
   }
+
+  drawNext(piece) {
+    this.clearNext()
+
+    for(let r = 0; r < piece.length; r++) {
+      for(let c = 0; c < piece.length; c++) {
+        if(piece[r][c]) {
+          const shiftCoord = piece.length === 3 ? 2*SQ : SQ  
+          const shiftX = piece.length === 3 ? SQ + 10 : SQ 
+  
+          ctxNext.fillStyle = green
+          ctxNext.fillRect(SQ*c + shiftX, SQ*r + shiftCoord, SQ, SQ )
+        }
+      }
+    }
+  }
+
+  clearNext() {
+    ctxNext.fillStyle = black
+    ctxNext.fillRect(0, 0, 110, 110)
+  }
 }
 
 let piecesArray = []
@@ -183,39 +175,19 @@ for(let i = 0; i < 5; i++) {
 
 let piece = piecesArray[0]
 
-piece.draw()
-
-createBoard()
-drawBoard()
-
-
-let dropStart = Date.now()
-
-function drop() {
-  
-  let now = Date.now()
-  let delta = now - dropStart
-
-  if(delta > 1000) {
-    piece.moveDown()
-    dropStart = Date.now()
-  }
-  
-  if(!gameOver) {
-    requestAnimationFrame(drop)
-  }
-}
-
-if(!gameOver) drop()
-
 gameMenu.addEventListener('click', (evt) => {
   if(evt.target.id === 'startGame') {
     startGame.style.display = 'none'
+    gameMenu.style.display = 'none'
     gameOver = false
+    piece.draw()
+    createBoard()
+    drawBoard()
     drop()
+    piece.drawNext(piecesArray[index + 1].activeTetromino)
   }
   if(evt.target.id === 'retryButton') {
-    gameEnd.style.display = 'none'
+    gameMenu.style.display = 'none'
     resetGame()
     gameOver = false
     drop()
@@ -269,6 +241,22 @@ function controlButtons(evt) {
   }
 }
 
+let dropStart = Date.now()
+function drop() {
+  
+  let now = Date.now()
+  let delta = now - dropStart
+
+  if(delta > 1000) {
+    piece.moveDown()
+    dropStart = Date.now()
+  }
+  
+  if(!gameOver) {
+    requestAnimationFrame(drop)
+  }
+}
+
 function drawSquare(x, y, color) {
   ctx.fillStyle = color
   ctx.fillRect(SQ*x, SQ*y, SQ, SQ)
@@ -297,25 +285,6 @@ function drawBoard() {
   }
 }
 
-function clearNext() {
-  ctxNext.fillStyle = black
-  ctxNext.fillRect(0, 0, 110, 110)
-}
-
-function drawNext(piece) {
-  for(let r = 0; r < piece.length; r++) {
-    for(let c = 0; c < piece.length; c++) {
-      if(piece[r][c]) {
-        const shiftCoord = piece.length === 3 ? 2*SQ : SQ  
-        const shiftX = piece.length === 3 ? SQ + 10 : SQ 
-
-        ctxNext.fillStyle = green
-        ctxNext.fillRect(SQ*c + shiftX, SQ*r + shiftCoord, SQ, SQ )
-      }
-    }
-  }
-}
-
 function hoverAnimation(direction) {
   direction.style.animation = 'hover .2s linear'
   let timeout = setTimeout(() => {
@@ -333,7 +302,51 @@ function resetGame() {
   piece.y = -3
 }
 
-reset.addEventListener('click', resetGame)
+function createNextPieces() {
+  piecesArray.push(randomPiece())
+  piece = piecesArray[index]
+}
+
+function gameIsOver() {
+  score_Value.textContent = score
+  gameEnd.style.display = 'flex'
+  gameMenu.style.display = 'flex'
+  gameOver = true
+}
+
+function increaseScore() {
+  score += 10
+}
+
+function setScoreValue() {
+  scoreValue.textContent = score
+}
+
+function removeFullRows() {
+  for(let r = 0; r < ROW; r++) {
+    let isRowFull = true
+    for(let c = 0; c < COLUMN; c++) {
+      isRowFull = isRowFull && board[r][c] !== VACANT
+    }   
+  
+    if(isRowFull) {
+      // if the row is full
+      // we move down all the rows above it
+      for(let y = r; y > 1; y--) {
+        for(let c = 0; c < COLUMN; c++) {
+          board[y][c] = board[y-1][c]
+        }
+      }
+      // the top row board[0][..] has no row above it
+      for(let c = 0; c < COLUMN; c++) {
+        board[0][c] = VACANT
+      }
+
+      increaseScore()
+    }
+  }
+}
+
 
 
 
