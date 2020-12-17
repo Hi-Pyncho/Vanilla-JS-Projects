@@ -13,9 +13,69 @@
 }
 
 .wrapper {
+  position: relative;
   display: flex;
   width: 320px;
   margin: 0 auto 0 auto;
+}
+
+.gameMenu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 1px;
+  height: 100%;
+  width: 101%;
+}
+
+.gameMenu .btn-startGame,
+.gameEnd {
+  text-transform: uppercase;
+  border: 2px solid var(--light);
+  padding: 10px;
+  font-size: 50px;
+  letter-spacing: 4px;
+  font-family: "FFFForward";
+  height: 100%;
+  width: 100%;
+}
+
+/* #startGame {display: none;} */
+
+.gameEnd {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light);
+  font-size: 30px;
+}
+
+.scoreTitle {
+  font-size: 20px;
+  margin: 20px 0 10px 0;
+}
+
+.scoreValue {
+  font-size: 20px;
+  border: 4px solid var(--dark);
+  padding: 5px 10px;
+}
+
+.btn.btn-retry {
+  font-family: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+  padding: 5px 10px;
+  margin-top: 20px;
+  border: 3px solid transparent;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+.btn-retry:hover {
+  border: 3px solid var(--dark);
 }
 
 .sidePanel {

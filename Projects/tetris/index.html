@@ -11,6 +11,15 @@
   <a href="../../index.html" class="main-menu">MAIN MENU</a>
   <h1 class="title">Tetris</h1>
   <div class="wrapper">
+    <div class="gameMenu">
+      <button id="startGame" type="button" class="btn btn-startGame">Start</button>
+      <div class="gameEnd">
+        <div class="gameEnd-title">Game Over</div>
+        <div class="scoreTitle">Your Score</div>
+        <div id="score_Value" class="scoreValue">123</div>
+        <button id="retryButton" type="button" class="btn btn-retry">Retry</button>
+      </div>
+    </div>
     <canvas id="tetris" width="200" height="400"></canvas>
     <div class="sidePanel">
       <div class="nextPiece">
@@ -28,6 +37,7 @@
       </div>
     </div>
   </div>
+  <button id="reset">reset</button>
   
   <script type="module" src="script.js"></script>
 </body>

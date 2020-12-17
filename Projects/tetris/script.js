@@ -4,6 +4,9 @@ const buttons = document.querySelector('.playButtons')
 const scoreValue = document.querySelector('.score-value')
 const canvas = document.querySelector('#tetris')
 const ctx = canvas.getContext('2d')
+// const startButton = document.querySelector('.btn-startGame')
+const gameMenu = document.querySelector('.gameMenu')
+const gameEnd = document.querySelector('.gameEnd')
 
 const cvsNext = document.querySelector('#next')
 const ctxNext = cvsNext.getContext('2d')
@@ -16,6 +19,8 @@ const ROW = 20
 const COLUMN = 10
 const VACANT = black // color of an empty square
 let score = 0
+let gameOver = true
+
 
 let index = 0
 
@@ -110,8 +115,11 @@ class Piece {
         if(!this.activeTetromino[r][c]) continue
 
         if(this.y + r < 0) {
-          alert('Game Over')
+          // alert('Game Over')
+          score_Value.textContent = score
+          gameEnd.style.display = 'flex'
           gameOver = true
+          // resetGame()
           break
         }
         
@@ -173,15 +181,16 @@ for(let i = 0; i < 5; i++) {
   piecesArray.push(randomPiece())
 }
 
-createBoard()
-drawBoard()
-
 let piece = piecesArray[0]
 
 piece.draw()
 
+createBoard()
+drawBoard()
+
+
 let dropStart = Date.now()
-let gameOver = false
+
 function drop() {
   
   let now = Date.now()
@@ -197,7 +206,21 @@ function drop() {
   }
 }
 
-drop()
+if(!gameOver) drop()
+
+gameMenu.addEventListener('click', (evt) => {
+  if(evt.target.id === 'startGame') {
+    startGame.style.display = 'none'
+    gameOver = false
+    drop()
+  }
+  if(evt.target.id === 'retryButton') {
+    gameEnd.style.display = 'none'
+    resetGame()
+    gameOver = false
+    drop()
+  }
+})
 
 document.addEventListener('keydown', (evt) => {
   if([32, 37, 38, 39, 40].indexOf(evt.keyCode) > -1) {
@@ -251,7 +274,6 @@ function drawSquare(x, y, color) {
   ctx.fillRect(SQ*x, SQ*y, SQ, SQ)
 }
 
-
 function randomPiece() {
   let randomN = Math.floor(Math.random() * PIECES.length)
 
@@ -301,3 +323,20 @@ function hoverAnimation(direction) {
     clearTimeout(timeout)
   }, 100);
 }
+
+function resetGame() {
+  createBoard()
+  drawBoard()
+  score = 0
+  scoreValue.textContent = score
+  piece.x = 3
+  piece.y = -3
+}
+
+reset.addEventListener('click', resetGame)
+
+
+
+
+
+
