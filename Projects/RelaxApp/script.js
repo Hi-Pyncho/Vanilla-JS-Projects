@@ -13,11 +13,8 @@ const circumference = radius * 2 * Math.PI
 const startMinutes = 5
 let totalTime = startMinutes * 60
 
-
-
 circle.style.strokeDasharray = `${circumference} ${circumference}`
 circle.style.strokeDashoffset = `${circumference}`
-
 
 startbutton.addEventListener('click', () => {
   startbutton.style.display = 'none'

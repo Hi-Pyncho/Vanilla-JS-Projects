@@ -132,7 +132,6 @@
 .hr, .mn, .sc {
   display: flex;
   justify-content: center;
-  /* align-items: center; */
   position: absolute;
 }
 
@@ -162,7 +161,6 @@
   background-color: var(--light);
   z-index: 10;
 }
-
 
 .hide {
   display: none;

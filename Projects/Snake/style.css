@@ -67,7 +67,6 @@
   font-size: 250px;
   transition: all .5s ease;
   opacity: 0.3;
-  /* background-image: url(img/thumb.png); */
   background-repeat: no-repeat;
   background-size: cover;
 }
