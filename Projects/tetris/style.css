@@ -1,0 +1,161 @@
+@import '../../../basicStyle.css';
+
+#tetris {
+  border: 2px solid var(--light);
+  margin: 0 auto 0 auto;
+}
+
+.title {
+  color: var(--light);
+  margin: 20px auto 30px auto;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  width: 320px;
+  margin: 0 auto 0 auto;
+}
+
+.gameMenu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 1px;
+  height: 100%;
+  width: 101%;
+}
+
+.gameMenu .btn-startGame,
+.gameEnd {
+  text-transform: uppercase;
+  border: 2px solid var(--light);
+  padding: 10px;
+  font-size: 50px;
+  letter-spacing: 4px;
+  font-family: "FFFForward";
+  height: 100%;
+  width: 100%;
+}
+
+.gameEnd {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light);
+  font-size: 30px;
+}
+
+.scoreTitle {
+  font-size: 20px;
+  margin: 20px 0 10px 0;
+}
+
+.scoreValue {
+  text-align: center;
+  font-size: 20px;
+  border: 4px solid var(--dark);
+  padding: 5px 10px 5px 14px;
+}
+
+.btn.btn-retry {
+  font-family: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+  padding: 5px 10px;
+  margin-top: 20px;
+  border: 3px solid transparent;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+.btn-retry:hover {
+  border: 3px solid var(--dark);
+}
+
+.sidePanel {
+  border: 2px solid var(--light);
+  width: 120px;
+}
+
+.nextPiece {
+  border-bottom: 2px solid var(--light);
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 0;
+  color: var(--light);
+  border-bottom: 2px solid var(--light);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.score-value {
+  margin-top: 10px;
+}
+
+.playButtons {
+  display: flex;
+  flex-wrap: wrap;
+  height: 36%;
+}
+
+.btn {
+  background-color: var(--dark);
+  color: var(--light);
+  border: none;
+  font-size: 30px;
+}
+
+.left,
+.right {
+  width: 50%;
+}
+
+.up,
+.down {
+  width: 100%;
+}
+
+.up {
+  border-bottom: 2px solid var(--light);
+}
+
+.down {
+  border-top: 2px solid var(--light);;
+}
+
+.left {
+  border-right: 2px solid var(--light);
+}
+
+.btn:hover {
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+@keyframes hover {
+  0% { 
+    background-color: var(--dark);
+    color: var(--light);
+  }
+  30% { 
+    background-color: var(--light);
+    color: var(--dark);
+  }
+  70% { 
+    background-color: var(--light);
+    color: var(--dark);
+  }
+  100% { 
+    background-color: var(--dark);
+    color: var(--light);
+  }
+}
