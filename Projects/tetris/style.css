@@ -1,4 +1,4 @@
-@import '../../../basicStyle.css';
+@import './../../basicStyle.css';
 
 #tetris {
   border: 2px solid var(--light);
