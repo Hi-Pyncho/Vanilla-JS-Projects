@@ -1,0 +1,9 @@
+@import './../../basicStyle.css';
+
+.title {
+  font-size: 30px;
+  text-transform: uppercase;
+  color: var(--light);
+  letter-spacing: 4px;
+  margin: 30px auto 30px auto;
+}
