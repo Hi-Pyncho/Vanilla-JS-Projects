@@ -7,3 +7,10 @@
   letter-spacing: 4px;
   margin: 30px auto 30px auto;
 }
+
+.description {
+  margin: 0 auto 30px auto;
+  font-size: 20px;
+  color: var(--light);
+  letter-spacing: 2px;
+}
