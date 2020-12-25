@@ -4,12 +4,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: var(--light);
 }
 
 .title {
   font-size: 30px;
   text-transform: uppercase;
-  color: var(--light);
   letter-spacing: 4px;
   margin: 30px 0;
 }
@@ -17,8 +17,15 @@ body {
 .description {
   margin-bottom: 30px;
   font-size: 20px;
-  color: var(--light);
   letter-spacing: 2px;
+}
+
+.game-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 450px;
 }
 
 .figure-container {
@@ -30,4 +37,38 @@ body {
 
 .figure-part {
   display: none;
+}
+
+.wrong-letters-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+
+
+.pop-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.final-message {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.play-button {
+  font-family: inherit;
+  text-transform: uppercase;
+  border: 3px solid var(--light);
+  background-color: transparent;
+  color: inherit;
+  padding: 5px 10px;
+  margin-top: 20px;
+}
+
+.play-button:hover {
+  background-color: var(--light);
+  color: var(--dark);
 }
