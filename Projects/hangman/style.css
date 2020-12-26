@@ -85,6 +85,7 @@ body {
   color: var(--dark);
   text-transform: uppercase;
   letter-spacing: 3px;
+  text-align: center;
 }
 
 .play-button {
