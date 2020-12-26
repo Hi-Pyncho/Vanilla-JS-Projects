@@ -52,11 +52,18 @@ body {
   font-size: 20px;
 }
 
+.word-container {
+  margin-top: 20px;
+  display: flex;
+}
+
 .letter {
   display: inline-flex;
-  font-size: 30px;
+  font-size: 20px;
   margin: 0 3px;
   width: 30px;
+  height: 40px;
+  text-transform: uppercase;
   align-items: center;
   justify-content: center;
   border-bottom: 3px solid var(--light);
