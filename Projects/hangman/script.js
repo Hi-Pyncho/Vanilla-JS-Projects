@@ -14,3 +14,18 @@ let selectedWord = words[Math.floor(Math.random() * words.length)]
 const correctLetters = []
 const wrongLetters = []
 
+function displayWords() {
+  wordEl.innerHTML =  `
+    ${selectedWord
+      .split('')
+      .map(l => `
+        <span class='letter'> 
+          ${correctLetters.includes(l) ? l : ''}
+        </span>
+      `)
+      .join('')
+    }
+  `
+}
+
+displayWords()
