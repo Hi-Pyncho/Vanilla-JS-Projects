@@ -16,6 +16,7 @@
   <p class="description">Find the hidden word - enter the letter</p>
 
   <div class="game-container">
+    <h2 class="sr-only">Hangman illustration</h2>
     <svg height="250" width="200" class="figure-container">
       <!-- Rod -->
       <line x1='60' y1='20' x2='140' y2='20' />
@@ -35,29 +36,32 @@
     </svg>
 
     <div class="wrong-letters-container">
-      <div class="wrong-letters">
-        <p>Wrong</p>
-        <span>e, r, t, y</span>
-      </div>
+      <h2 class="sr-only">Wrong Letters</h2>
+      <p>Wrong</p>
+      <span>e, r, t, y</span>
     </div>
   
-    <div class="word">
+    <div class="word-container">
+      <h2 class="sr-only">Word for guessing</h2>
       <span class="letter">h</span>
       <span class="letter">e</span>
       <span class="letter">l</span>
       <span class="letter">l</span>
       <span class="letter">o</span>
     </div>
+
+    <div class="popup-container">
+      <h2 class="final-message"></h2>
+      <button class="play-button">Play Again</button>
+    </div>
+  
+    <div class="notification-container">
+      <p>You have already entered this letter</p>
+    </div>
   </div>
 
-  <div class="pop-container">
-    <h2 class="final-message">You Have Won!</h2>
-    <button class="play-button">Play Again</button>
-  </div>
-
-  <div class="notification-container">
-    <p>You have already entered this letter</p>
-  </div>
+  <button id="test">Test</button>
+  
 
   <script src="script.js"></script>
 </body>
