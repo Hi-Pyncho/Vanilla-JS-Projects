@@ -107,13 +107,9 @@ body {
 .notification-container {
   margin-top: 20px;
   opacity: 0;
+  transition: opacity 1.5s ease;
 }
 
 .showAndHide {
-  animation: showAndHide 2s ease;
-}
-
-@keyframes showAndHide {
-  50% {opacity: 1;}
-  100% {opacity: 0;}
+  opacity: 1;
 }
