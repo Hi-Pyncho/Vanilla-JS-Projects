@@ -40,12 +40,23 @@ body {
 }
 
 .wrong-letters-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  max-width: 150px;
   position: absolute;
   top: 20px;
   right: 20px;
+}
+
+.wrong-letters {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.wrong-letters-container p {
+  display: flex;
+  justify-content: flex-end;
+  flex-basis: 100%;
 }
 
 .wrong-letters-container span {
@@ -54,6 +65,10 @@ body {
 
 .word-container {
   margin-top: 20px;
+  display: flex;
+}
+
+.word-letters {
   display: flex;
 }
 
@@ -71,8 +86,6 @@ body {
 .popup-container {
   position: absolute;
   display: none;
-  /* display: flex; */
-  
   flex-direction: column;
   align-items: center;
   justify-content: center;
