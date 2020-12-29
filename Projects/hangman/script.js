@@ -13,7 +13,7 @@ let selectedWord = words[Math.floor(Math.random() * words.length)]
 // let selectedWord = 'wigard'
 
 // const correctLetters = ['w', 'i', 'g', 'a', 'r', 'd']
-const correctLetters = ['w', 'i', 'g', 'a', 'r', 'd']
+const correctLetters = []
 const wrongLetters = []
 
 function displayWords() {
@@ -28,8 +28,8 @@ function displayWords() {
       .join('')
     }
   `
-
   
+  gameEnd()
 }
 
 function gameEnd() {
@@ -40,5 +40,18 @@ function gameEnd() {
     popup.style.display = 'flex'
   }
 }
+
+window.addEventListener('keydown', e => {
+  // console.log(e.keyCode)
+  if(e.keyCode >= 65 && e.keyCode <= 90) {
+    const letter = e.key
+
+    if(selectedWord.includes(letter) && !correctLetters.includes(letter)) {
+      correctLetters.push(letter)
+
+      displayWords()
+    }
+  }
+})
 
 displayWords()
