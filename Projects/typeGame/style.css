@@ -109,7 +109,7 @@ ul {
   width: 30px;
 }
 
-.word {
+/* .word {
   position: absolute;
   width: 350px;
   height: 50px;
@@ -122,6 +122,23 @@ ul {
   font-family: inherit;
   text-transform: uppercase;
   font-size: 20px;
+  padding: 5px 10px;
+  letter-spacing: 3px;
+  text-align: center;
+} */
+.word {
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  bottom: 100px;
+  right: 210px;
+  border: 3px solid var(--light);
+  outline: none;
+  background-color: var(--dark);
+  color: var(--light);
+  font-family: inherit;
+  text-transform: uppercase;
+  font-size: 25px;
   padding: 5px 10px;
   letter-spacing: 3px;
   text-align: center;
@@ -191,3 +208,28 @@ ul {
   left: 15px;
   top: 0;
 }
+
+.revolver2 {
+  transform: scaleX(-1) rotate(-45);
+}
+
+.shout1 {
+  animation: shout1 .5s ease;
+}
+
+.shout2 {
+  animation: shout2 .2s ease;
+}
+
+@keyframes shout2 {
+  0% {transform: scaleX(-1) rotate(-45)}
+  50% {transform: scaleX(-1) rotate(-55deg)}
+  100% {transform: scaleX(-1) rotate(-45)}
+}
+
+@keyframes shout1 {
+  0% {transform: rotate(-45)}
+  50% {transform: rotate(-55deg)}
+  100% {transform: rotate(-45)}
+}
+
