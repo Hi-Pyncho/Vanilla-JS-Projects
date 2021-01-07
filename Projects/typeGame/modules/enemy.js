@@ -13,7 +13,7 @@ difficultyEl.addEventListener('change', () => {
 class Enemy {
   constructor() {
     this.life = 0
-    this.difficulties = [100, 300, 666]
+    this.difficulties = [10, 300, 666]
   }
 
   setDifficulty() {
@@ -45,13 +45,29 @@ class Enemy {
 
   shootEnemy() {
     enemy.style.opacity = .4
+    jaw.style.transform = 'translateY(15px)'
     setTimeout(() => {
       enemy.style.opacity = 1
+      jaw.style.transform = 'translateY(0)'
     }, 100);
   }
 
   isLifeZero() {
     return this.life === 0
+  }
+
+  dead() {
+    jaw.style.transform = 'translateY(20px)'
+    dead_eyes.style.opacity = 1
+    hat.style.opacity = 0
+    lives.style.visibility = 'hidden'
+  }
+
+  live() {
+    jaw.style.transform = 'translateY(0)'
+    dead_eyes.style.opacity = 0
+    hat.style.opacity = 1
+    lives.style.visibility = 'visible'
   }
 }
 

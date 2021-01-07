@@ -46,22 +46,26 @@ class Game {
   }
 
   resetTime() {
-    clearInterval(timeId)
+    
     this.timeInSeconds = 0
     this.updateTimeElement()
+  }
+
+  stopTime() {
+    clearInterval(timeId)
   }
 
   updateTimeElement() {
     gameTime.textContent = this.getTime(this.timeInSeconds)
   }
 
-  gameReset() {
-    this.score = 0
-    this.timeInSeconds = 0
-    enemy.life = 100
-    currentWord = getRandomWord()
-    setBulletWord(currentWord)
-  }
+  // gameReset() {
+  //   this.score = 0
+  //   this.timeInSeconds = 0
+  //   // enemy.life = 100
+  //   currentWord = getRandomWord()
+  //   setBulletWord(currentWord)
+  // }
 
   setResultTime() {
     resultValue.textContent = this.getTime(this.timeInSeconds)

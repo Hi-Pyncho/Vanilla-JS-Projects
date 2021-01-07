@@ -31,6 +31,18 @@ class Word {
     }
   }
 
+  resetWord() {
+    // console.log()
+    // this.clearWordEl()
+    this.currentWord = this.getRandomWord()
+    console.log(this.currentWord)
+    this.setBulletWord()
+  }
+
+  clearWordEl() {
+    bulletContainer.innerHTML = ''
+  }
+
   isSuccessfulShoot(letter) {
     // console.log(letter === this.currentWord[0])
     return letter === this.currentWord[0]

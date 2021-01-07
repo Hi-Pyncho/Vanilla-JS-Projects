@@ -265,6 +265,16 @@ ul {
   z-index: 100;
 }
 
+/* .lives {
+  visibility: vi;
+} */
+
+/* #jaw {
+  transform: translateY(10px);
+} */
+
+/* viewBox="0 0 406.8221 308.2689" */
+
 .game-window__title {
   text-transform: uppercase;
   letter-spacing: 4px;

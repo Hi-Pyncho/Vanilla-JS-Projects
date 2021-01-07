@@ -25,7 +25,9 @@ startBtn.addEventListener('click', () => {
   enemy.setDifficulty()
   console.log(enemy)
   game.startGame()
-  word.setBulletWord()
+  // word.setBulletWord()
+  word.resetWord()
+  enemy.live()
 })
 
 
@@ -44,21 +46,27 @@ window.addEventListener('keydown', (e) => {
       enemy.decreaseLife()
     } else {
       enemy.increaseLife()
+      Gun.missFire()
     }
     word.setNextWord()
   }
   if (enemy.isLifeZero()) {
     console.log('end!')
+    enemy.dead()
+    game.stopTime()
     game.setResultTime()
-    game.gameEnd()
-    game.resetTime()
+    
+    setTimeout(() => {
+      game.resetTime()
+      game.gameEnd()
+      word.clearWordEl()
+    }, 2000);
   }
 })
 
 
-document.querySelector('.test').addEventListener('click', () => {
-  Gun.randomShout()
-})
+
+
 
 
 const select = document.querySelector('.select-section');
@@ -78,4 +86,10 @@ const selectEvent = () => {
 
 
 
-// console.log(difficulty.options[difficulty.options.selectedIndex].value)
+
+const fire = new Audio('./audio/shoot.mp3')
+const empty = new Audio('./audio/empty.mp3')
+document.querySelector('.test').addEventListener('click', () => {
+  empty.currentTime = 0
+  empty.play()
+})
