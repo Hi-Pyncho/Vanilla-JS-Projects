@@ -5,8 +5,6 @@ const resultValue = resultsWindow.querySelector('.game-result__value')
 
 class Game {
   constructor(props) {
-    
-    this.score = props.score
     this.timeInSeconds = props.timeInSeconds
   }
 
@@ -23,15 +21,6 @@ class Game {
     sec = sec < 10 ? '0' + sec : sec
   
     return `YOUR TIME : ${min}:${sec}`
-  }
-
-  increaseScore() {
-    this.score += 5
-    this.updateScoreElement()
-  }
-
-  updateScoreElement() {
-    gameScore.textContent = `SCORE : ${this.score}`
   }
 
   startTime() {

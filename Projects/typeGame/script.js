@@ -8,7 +8,6 @@ import wordArray from './modules/wordsArray.js'
 const startBtn = document.querySelector('.start-button')
 
 const game = new Game({
-  score: 0,
   timeInSeconds: 0
 })
 const enemy = new Enemy()
