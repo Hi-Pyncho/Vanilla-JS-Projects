@@ -23,13 +23,13 @@ const word = new Word({
 word.setBulletWord()
 
 window.addEventListener('keydown', (e) => {
-  if(e.keyCode >= 65 && e.keyCode <= 90) {
+  if (e.keyCode >= 65 && e.keyCode <= 90) {
     const letter = e.key
     textInput.textContent = letter
-    
+
     console.log(enemy.life)
-    
-    if(word.isSuccessfulShoot(letter)) {
+
+    if (word.isSuccessfulShoot(letter)) {
       Gun.randomShout()
       enemy.shootEnemy()
       word.removeFirstLetter()
@@ -39,7 +39,7 @@ window.addEventListener('keydown', (e) => {
     }
     word.setNextWord()
   }
-  if(enemy.isLifeZero()) {
+  if (enemy.isLifeZero()) {
     console.log('end!')
   }
 })
@@ -49,3 +49,24 @@ document.querySelector('.test').addEventListener('click', () => {
   Gun.randomShout()
 })
 
+
+const select = document.querySelector('.select-section');
+
+select.addEventListener('blur', () => selectEvent());
+select.addEventListener('click', () => selectEvent());
+
+console.log(select)
+
+const selectEvent = () => {
+  if (event.type == 'click') {
+    console.log('clicked')
+    if (select.classList.contains('closed')) {
+      select.classList.replace('closed', 'opened');
+    } else {
+      select.classList.replace('opened', 'closed');
+    }
+  }
+  if (event.type == 'blur') {
+    select.classList.remove('change');
+  }
+};
