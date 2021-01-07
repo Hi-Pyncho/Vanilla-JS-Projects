@@ -1,10 +1,22 @@
 const gameTime = document.querySelector('.time')
-const gameScore = document.querySelector('.score')
+// const gameScore = document.querySelector('.score')
+
+const gameWindow = document.querySelector('.game-window')
+
+
+const resultsWindow = gameWindow.querySelector('.game-results')
+const resultValue = resultsWindow.querySelector('.game-result__value')
 
 class Game {
   constructor(props) {
+    
     this.score = props.score
     this.timeInSeconds = props.timeInSeconds
+  }
+
+  startGame() {
+    gameWindow.style.display = 'none'
+    this.startTime()
   }
 
   getTime(seconds) {
@@ -49,6 +61,15 @@ class Game {
     enemy.life = 100
     currentWord = getRandomWord()
     setBulletWord(currentWord)
+  }
+
+  setResultTime() {
+    resultValue.textContent = this.getTime(this.timeInSeconds)
+  }
+
+  gameEnd() {
+    gameWindow.style.display = 'flex'
+    resultsWindow.style.display = 'flex'
   }
 }
 

@@ -253,7 +253,7 @@ ul {
   }
 }
 
-.game-start {
+.game-window {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -265,7 +265,7 @@ ul {
   z-index: 100;
 }
 
-.game-start__title {
+.game-window__title {
   text-transform: uppercase;
   letter-spacing: 4px;
   margin-bottom: 20px;
@@ -319,5 +319,37 @@ ul {
 }
 
 .start-button {
-  
+  font-family: inherit;
+  font-size: 30px;
+  background-color: var(--light);
+  border: 5px solid var(--dark);
+  padding: 5px 10px;
+  letter-spacing: 3px;
+  margin-top: 40px;
+}
+
+.start-button:hover {
+  background-color: var(--dark);
+  color: var(--light);
+}
+
+.game-results {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  z-index: 101;
+}
+
+.game-result__title {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.game-result__value {
+  background-color: var(--dark);
+  color: var(--light);
+  padding: 10px;
+  letter-spacing: 3px;
+  font-size: 20px;
 }

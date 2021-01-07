@@ -3,6 +3,8 @@ import Gun from './modules/gun.js'
 import Game from './modules/game.js'
 import Word from './modules/word.js'
 
+const startBtn = document.querySelector('.start-button')
+
 const textInput = document.querySelector('.word')
 
 
@@ -11,7 +13,7 @@ const game = new Game({
   score: 0,
   timeInSeconds: 0
 })
-const enemy = new Enemy(5)
+const enemy = new Enemy()
 const gun = new Gun()
 const word = new Word({
   words: ['wizard', 'programm', 'skull', 'computer']
@@ -19,8 +21,14 @@ const word = new Word({
 
 
 
+startBtn.addEventListener('click', () => {
+  enemy.setDifficulty()
+  console.log(enemy)
+  game.startGame()
+  word.setBulletWord()
+})
 
-word.setBulletWord()
+
 
 window.addEventListener('keydown', (e) => {
   if (e.keyCode >= 65 && e.keyCode <= 90) {
@@ -41,6 +49,9 @@ window.addEventListener('keydown', (e) => {
   }
   if (enemy.isLifeZero()) {
     console.log('end!')
+    game.setResultTime()
+    game.gameEnd()
+    game.resetTime()
   }
 })
 
@@ -52,21 +63,19 @@ document.querySelector('.test').addEventListener('click', () => {
 
 const select = document.querySelector('.select-section');
 
-select.addEventListener('blur', () => selectEvent());
-select.addEventListener('click', () => selectEvent());
 
-console.log(select)
+select.addEventListener('click', () => selectEvent())
 
 const selectEvent = () => {
   if (event.type == 'click') {
-    console.log('clicked')
     if (select.classList.contains('closed')) {
       select.classList.replace('closed', 'opened');
     } else {
       select.classList.replace('opened', 'closed');
     }
   }
-  if (event.type == 'blur') {
-    select.classList.remove('change');
-  }
-};
+}
+
+
+
+// console.log(difficulty.options[difficulty.options.selectedIndex].value)
