@@ -18,31 +18,24 @@
   letter-spacing: 4px;
 }
 
-section {
-  display: flex;
-  align-items: center;
-}
-
 main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  width: 900px;
+  max-width: 1500px;
   margin: 20px auto;
-}
-
-main > section {
-  width: 280px;
-  height: 280px;
-  background-color: var(--light);
-  margin-bottom: 30px;
 }
 
 .project {
   display: flex;
   justify-content: center;
+  align-items: center;
   position: relative;
   overflow: hidden;
+  width: 280px;
+  height: 280px;
+  background-color: var(--light);
+  margin-bottom: 30px;
 }
 
 .thumb {
@@ -60,4 +53,22 @@ main > section {
 .project:hover .thumb {
   transform: translateY(0);
   transition: transform 0.5s ease;
+}
+
+@media (max-width: 1500px) {
+  main {
+    width: 1200px;
+  }
+}
+
+@media (max-width: 1200px) {
+  main {
+    width: 900px;
+  }
+}
+
+@media (max-width: 1000px) {
+  main {
+    width: 600px;
+  }
 }
