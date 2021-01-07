@@ -1,8 +1,5 @@
 const enemy = document.querySelector('.enemy')
 const lifeValue = document.querySelector('.lives__value')
-// const difficultyEl = document.querySelector('.difficulty')
-// const difficulty = difficultyEl.options[difficultyEl.selectedIndex].value
-// const difficultyInd = difficultyEl.selectedIndex
 const difficultyEl = document.querySelector('.difficulty')
 let difficultyInd = 0
 
@@ -13,7 +10,7 @@ difficultyEl.addEventListener('change', () => {
 class Enemy {
   constructor() {
     this.life = 0
-    this.difficulties = [10, 300, 666]
+    this.difficulties = [10, 100, 300, 666]
   }
 
   setDifficulty() {
@@ -72,3 +69,4 @@ class Enemy {
 }
 
 export default Enemy
+

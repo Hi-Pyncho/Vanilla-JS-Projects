@@ -1,4 +1,5 @@
 const bulletContainer = document.querySelector('.text-bullets')
+const textInput = document.querySelector('.word')
 
 class Word {
   constructor(props) {
@@ -32,10 +33,7 @@ class Word {
   }
 
   resetWord() {
-    // console.log()
-    // this.clearWordEl()
     this.currentWord = this.getRandomWord()
-    console.log(this.currentWord)
     this.setBulletWord()
   }
 
@@ -44,26 +42,8 @@ class Word {
   }
 
   isSuccessfulShoot(letter) {
-    // console.log(letter === this.currentWord[0])
     return letter === this.currentWord[0]
   }
-
-  // shootLetter(letter) {
-  //   if(letter === this.currentWord[0]) {
-  //     // звук выстрела
-  
-  //     // пистолет стреляет и наклоняется
-  //     Gun.randomShout()
-  //     Enemy.shootEnemy()
-  //     // удаляем элемент
-  //     this.removeFirstLetter()
-  //     Enemy.decreaseLife()
-  //   } else {
-  //     Enemy.increaseLife()
-  //     // console.log('miss!')
-  //     // звук осечки
-  //   }
-  // }
 
   removeFirstLetter() {
     bulletContainer.removeChild(bulletContainer.firstElementChild)
@@ -76,7 +56,10 @@ class Word {
     } else {
       console.log('The word is too long')
     }
-    
+  }
+
+  updateInput(letter) {
+    textInput.textContent = letter
   }
 }
 

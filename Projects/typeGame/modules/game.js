@@ -1,9 +1,5 @@
 const gameTime = document.querySelector('.time')
-// const gameScore = document.querySelector('.score')
-
 const gameWindow = document.querySelector('.game-window')
-
-
 const resultsWindow = gameWindow.querySelector('.game-results')
 const resultValue = resultsWindow.querySelector('.game-result__value')
 
@@ -26,7 +22,7 @@ class Game {
     let sec = seconds % 60
     sec = sec < 10 ? '0' + sec : sec
   
-    return `TIME : ${min}:${sec}`
+    return `YOUR TIME : ${min}:${sec}`
   }
 
   increaseScore() {
@@ -46,7 +42,6 @@ class Game {
   }
 
   resetTime() {
-    
     this.timeInSeconds = 0
     this.updateTimeElement()
   }
@@ -58,14 +53,6 @@ class Game {
   updateTimeElement() {
     gameTime.textContent = this.getTime(this.timeInSeconds)
   }
-
-  // gameReset() {
-  //   this.score = 0
-  //   this.timeInSeconds = 0
-  //   // enemy.life = 100
-  //   currentWord = getRandomWord()
-  //   setBulletWord(currentWord)
-  // }
 
   setResultTime() {
     resultValue.textContent = this.getTime(this.timeInSeconds)

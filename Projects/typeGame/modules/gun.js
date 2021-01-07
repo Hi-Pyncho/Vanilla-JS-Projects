@@ -1,18 +1,7 @@
 const firstRevolver = document.querySelector('.revolver1')
 const secondRevolver = document.querySelector('.revolver2')
 
-
-// const fire = document.createElement("audio");
-// fire.setAttribute("src", "../audio/shoot.mp3");
-// const fire = new Audio('../audio/shoot.mp3')
-// const fire = new Audio('../audio/shoot.mp3')
-
-// const empty = new Audio('../audio/empty.mp3')
-
 class Gun {
-
-  constructor() {}
-
   static animateFirstGun() {
     firstRevolver.classList.add('shout1')
     bum1.style.opacity = 1

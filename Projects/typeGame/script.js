@@ -3,9 +3,9 @@ import Gun from './modules/gun.js'
 import Game from './modules/game.js'
 import Word from './modules/word.js'
 import './modules/select.js'
+import wordArray from './modules/wordsArray.js'
 
 const startBtn = document.querySelector('.start-button')
-const textInput = document.querySelector('.word')
 
 const game = new Game({
   score: 0,
@@ -13,14 +13,11 @@ const game = new Game({
 })
 const enemy = new Enemy()
 const word = new Word({
-  words: ['wizard', 'programm', 'skull', 'computer']
+  words: wordArray
 })
-
-
 
 startBtn.addEventListener('click', () => {
   enemy.setDifficulty()
-  console.log(enemy)
   game.startGame()
   word.resetWord()
   enemy.live()
@@ -29,7 +26,7 @@ startBtn.addEventListener('click', () => {
 window.addEventListener('keydown', (e) => {
   if (e.keyCode >= 65 && e.keyCode <= 90) {
     const letter = e.key
-    textInput.textContent = letter
+    word.updateInput(letter)
 
     if (word.isSuccessfulShoot(letter)) {
       Gun.randomShout()
@@ -43,7 +40,6 @@ window.addEventListener('keydown', (e) => {
     word.setNextWord()
   }
   if (enemy.isLifeZero()) {
-    console.log('end!')
     enemy.dead()
     game.stopTime()
     game.setResultTime()
@@ -55,11 +51,3 @@ window.addEventListener('keydown', (e) => {
     }, 2000);
   }
 })
-
-
-
-
-
-
-
-

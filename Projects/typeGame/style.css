@@ -39,7 +39,6 @@ ul {
   margin: 0 auto;
   width: 500px;
   min-height: 300px;
-  /* border: 3px solid var(--light); */
 }
 
 .skeleton {
@@ -109,29 +108,12 @@ ul {
   width: 30px;
 }
 
-/* .word {
-  position: absolute;
-  width: 350px;
-  height: 50px;
-  bottom: 100px;
-  right: 70px;
-  border: 3px solid var(--light);
-  outline: none;
-  background-color: var(--dark);
-  color: var(--light);
-  font-family: inherit;
-  text-transform: uppercase;
-  font-size: 20px;
-  padding: 5px 10px;
-  letter-spacing: 3px;
-  text-align: center;
-} */
 .word {
   position: absolute;
   width: 65px;
   height: 65px;
-  bottom: 100px;
-  right: 210px;
+  bottom: 93px;
+  right: 219px;
   border: 3px solid var(--light);
   outline: none;
   background-color: var(--dark);
@@ -144,18 +126,17 @@ ul {
   text-align: center;
 }
 
-.score,
+
 .time {
+  display: flex;
+  justify-content: center;
+  width: 250px;
   position: absolute;
   bottom: 36px;
-  right: 90px;
+  right: 125px;
   color: var(--light);
   text-transform: uppercase;
   font-size: 20px;
-}
-
-.time {
-  left: 60px;
 }
 
 .lives {
@@ -175,14 +156,12 @@ ul {
 }
 
 .lives__value {
-
   font-size: 25px;
   letter-spacing: 3px;
   color: var(--dark);
 }
 
 .lives__heart {
-  /* position: absolute; */
   background-color: var(--dark);
   display: inline-block;
   height: 30px;
@@ -225,34 +204,6 @@ ul {
   animation: shout2 .2s ease;
 }
 
-@keyframes shout2 {
-  0% {
-    transform: scaleX(-1) rotate(-45)
-  }
-
-  50% {
-    transform: scaleX(-1) rotate(-55deg)
-  }
-
-  100% {
-    transform: scaleX(-1) rotate(-45)
-  }
-}
-
-@keyframes shout1 {
-  0% {
-    transform: rotate(-45)
-  }
-
-  50% {
-    transform: rotate(-55deg)
-  }
-
-  100% {
-    transform: rotate(-45)
-  }
-}
-
 .game-window {
   display: flex;
   flex-direction: column;
@@ -264,16 +215,6 @@ ul {
   background-color: var(--light);
   z-index: 100;
 }
-
-/* .lives {
-  visibility: vi;
-} */
-
-/* #jaw {
-  transform: translateY(10px);
-} */
-
-/* viewBox="0 0 406.8221 308.2689" */
 
 .game-window__title {
   text-transform: uppercase;
@@ -362,4 +303,33 @@ ul {
   padding: 10px;
   letter-spacing: 3px;
   font-size: 20px;
+}
+
+
+@keyframes shout2 {
+  0% {
+    transform: scaleX(-1) rotate(-45)
+  }
+
+  50% {
+    transform: scaleX(-1) rotate(-55deg)
+  }
+
+  100% {
+    transform: scaleX(-1) rotate(-45)
+  }
+}
+
+@keyframes shout1 {
+  0% {
+    transform: rotate(-45)
+  }
+
+  50% {
+    transform: rotate(-55deg)
+  }
+
+  100% {
+    transform: rotate(-45)
+  }
 }
