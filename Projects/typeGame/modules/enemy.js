@@ -1,4 +1,5 @@
 const enemy = document.querySelector('.enemy')
+const lifeValue = document.querySelector('.lives__value')
 
 class Enemy {
   constructor(life) {
@@ -7,17 +8,19 @@ class Enemy {
   
   decreaseLife() {
     this.life -= 1
+    this.updateLifeElement()
   }
 
   increaseLife() {
     this.life += 1
+    this.updateLifeElement()
+  }
+
+  updateLifeElement() {
+    lifeValue.textContent = this.life
   }
 
   set life(value) {
-    if(value < 100) {
-      console.log('слишком мало')
-      return
-    }
     this._life = value
   }
 
@@ -26,10 +29,14 @@ class Enemy {
   }
 
   shootEnemy() {
-    enemy.style.opacity = .1
+    enemy.style.opacity = .4
     setTimeout(() => {
       enemy.style.opacity = 1
     }, 100);
+  }
+
+  isLifeZero() {
+    return this.life === 0
   }
 }
 

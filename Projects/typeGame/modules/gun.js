@@ -5,7 +5,7 @@ class Gun {
 
   constructor() {}
 
-  animateFirstGun() {
+  static animateFirstGun() {
     firstRevolver.classList.add('shout1')
     bum1.style.opacity = 1
     setTimeout(() => {
@@ -14,7 +14,7 @@ class Gun {
     }, 200);
   }
 
-  animateSecondGun() {
+  static animateSecondGun() {
     secondRevolver.classList.add('shout2')
     bum2.style.opacity = 1
     setTimeout(() => {
@@ -23,7 +23,7 @@ class Gun {
     }, 200);
   }
 
-  randomShout() {
+  static randomShout() {
     const randomNum = Math.random()
     randomNum < 0.5 ? this.animateFirstGun() : this.animateSecondGun()
   }

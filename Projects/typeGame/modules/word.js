@@ -31,22 +31,27 @@ class Word {
     }
   }
 
-  shootLetter(letter) {
-    if(letter === this.currentWord[0]) {
-      // звук выстрела
-  
-      // пистолет стреляет и наклоняется
-      gun.randomShout()
-      enemy.shootEnemy()
-      // удаляем элемент
-      this.removeFirstLetter()
-      enemy.decreaseLife()
-    } else {
-      enemy.increaseLife()
-      console.log('miss!')
-      // звук осечки
-    }
+  isSuccessfulShoot(letter) {
+    // console.log(letter === this.currentWord[0])
+    return letter === this.currentWord[0]
   }
+
+  // shootLetter(letter) {
+  //   if(letter === this.currentWord[0]) {
+  //     // звук выстрела
+  
+  //     // пистолет стреляет и наклоняется
+  //     Gun.randomShout()
+  //     Enemy.shootEnemy()
+  //     // удаляем элемент
+  //     this.removeFirstLetter()
+  //     Enemy.decreaseLife()
+  //   } else {
+  //     Enemy.increaseLife()
+  //     // console.log('miss!')
+  //     // звук осечки
+  //   }
+  // }
 
   removeFirstLetter() {
     bulletContainer.removeChild(bulletContainer.firstElementChild)

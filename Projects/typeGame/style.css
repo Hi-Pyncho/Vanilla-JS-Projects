@@ -161,24 +161,28 @@ ul {
 .lives {
   position: absolute;
   display: flex;
+  width: 100px;
   height: 80px;
-  justify-content: space-between;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   color: red;
   top: 120px;
-  right: 218px;
+  right: 205px;
   z-index: 100;
   text-align: center;
   text-transform: uppercase;
 }
 
 .lives__value {
+  
   font-size: 25px;
   letter-spacing: 3px;
   color: var(--dark);
 }
 
 .lives__heart {
+  /* position: absolute; */
   background-color: var(--dark);
   display: inline-block;
   height: 30px;
