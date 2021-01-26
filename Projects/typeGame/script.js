@@ -20,10 +20,13 @@ startBtn.addEventListener('click', () => {
   game.startGame()
   word.resetWord()
   enemy.live()
+  
+  window.addEventListener('keydown', gameFunciton)
 })
 
-window.addEventListener('keydown', (e) => {
-  if (e.keyCode >= 65 && e.keyCode <= 90) {
+function gameFunciton(e) {
+  let isEnemyAlive = true
+  if (e.keyCode >= 65 && e.keyCode <= 90 && isEnemyAlive) {
     const letter = e.key
     word.updateInput(letter)
 
@@ -42,6 +45,8 @@ window.addEventListener('keydown', (e) => {
     enemy.dead()
     game.stopTime()
     game.setResultTime()
+    isEnemyAlive = false
+    window.removeEventListener('keydown', gameFunciton)
     
     setTimeout(() => {
       game.resetTime()
@@ -49,4 +54,6 @@ window.addEventListener('keydown', (e) => {
       word.clearWordEl()
     }, 2000);
   }
-})
+}
+
+
